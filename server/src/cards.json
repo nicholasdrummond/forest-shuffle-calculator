@@ -26,7 +26,7 @@
         "tree_type": "beech"
     },
     {
-        "count": 6,
+        "count": 7,
         "cost": 2,
         "name": "Oak",
         "score": {
@@ -397,20 +397,6 @@
     },
     {
         "count": 1,
-        "cost": 3,
-        "name": "Wolf",
-        "score": {
-            "operator": "multiplication",
-            "operand": 5,
-            "condition": "species",
-            "condition_target": "deer"
-        },
-        "side": "left",
-        "species": "pawed_animal",
-        "tree_type": "silver_fir"
-    },
-    {
-        "count": 1,
         "cost": 1,
         "name": "Chaffinch",
         "score": {
@@ -695,7 +681,7 @@
             "condition_target": "bat",
             "condition_count": 1
         },
-        "side": "left",
+        "side": "right",
         "species": "pawed_animal",
         "tree_type": "douglas_fir"
     },
@@ -1299,7 +1285,7 @@
         "tree_type": "horse_chestnut"
     },
     {
-        "count": 2,
+        "count": 1,
         "cost": 0,
         "name": "Tree Frog",
         "score": {
@@ -1437,7 +1423,7 @@
         "tree_type": "oak"
     },
     {
-        "count": 2,
+        "count": 1,
         "cost": 0,
         "name": "Purple Emperor",
         "score": {
@@ -1465,7 +1451,7 @@
         "tree_type": "douglas_fir"
     },
     {
-        "count": 1,
+        "count": 2,
         "cost": 3,
         "name": "Wolf",
         "score": {
@@ -1682,7 +1668,7 @@
         "tree_type": "oak"
     },
     {
-        "count": 2,
+        "count": 1,
         "cost": 1,
         "name": "Lynx",
         "score": {
@@ -1751,7 +1737,7 @@
         "tree_type": "douglas_fir"
     },
     {
-        "count": 3,
+        "count": 1,
         "cost": 1,
         "name": "Bullfinch",
         "score": {
@@ -2069,7 +2055,7 @@
         "tree_type": "sycamore"
     },
     {
-        "count": 2,
+        "count": 1,
         "cost": 2,
         "name": "Wild Boar",
         "score": {

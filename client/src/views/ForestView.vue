@@ -1,13 +1,15 @@
 <template>
-	<div v-for="card in cards">
-		<p>Name: {{card.name}}</p>
-		<p>Tree Type: {{card.tree_type}}</p>
-		<br/>
-	</div>
+	<PackSelector />
 </template>
 
 <script>
+import PackSelector from '@/components/PackSelector.vue';
+
 export default {
+	name: 'Forestview',
+	components: {
+		PackSelector
+	},
 	data() {
 		return {
 			cards: []

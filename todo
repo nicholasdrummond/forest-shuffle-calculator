@@ -2,9 +2,4 @@ Finish card swagger definition
 Add swagger route definitions
 Move enums into json
 Set bee score conditions
-Write data set tests:
-- 66 trees
-- 48 top
-- 48 bottom
-- 44 left
-- 44 right
+DB transaction when populate from json

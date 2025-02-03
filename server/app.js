@@ -4,18 +4,15 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const swagger = require('swagger-ui-express')
 const docs = require('swagger-jsdoc')
-const mongoose = require("mongoose")
 
-const port = process.env.PORT ?? 3000
+const port = process.env.PORT ?? 3001
 
 const app = express()
 
 const cards = require('./src/routes/card')
+const packs = require('./src/routes/pack')
 
-mongoose.connect(process.env.DATABASE_URL || 'mongodb://admin:password1.@localhost:27017/admin')
-mongoose.connection.once("open", () => {
-	console.log("Connection Succeeded")
-})
+require('./src/db/database').connect()
 
 app.use(bodyParser.json({
 	limit: '25mb'
@@ -50,6 +47,7 @@ app.use((req, res, next) => {
 })))*/
 
 app.use('/card', cards)
+app.use('/pack', packs)
 
 app.listen(port, () => {
 	console.log(`Listening on port ${port}`)

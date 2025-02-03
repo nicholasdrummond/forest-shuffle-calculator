@@ -12,4 +12,13 @@ router.get('/', async (req, res) => {
 	}
 })
 
+router.get('/pack/:packId', async (req, res) => {
+	try {
+		let cards = await Card().find({ pack: req.params.packId })
+		res.status(200).send(cards)
+	} catch (e) {
+		res.status(500).send(e)
+	}
+})
+
 module.exports = router;

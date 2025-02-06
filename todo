@@ -3,3 +3,5 @@ Add swagger route definitions
 Move enums into json
 Set bee score conditions
 DB transaction when populate from json
+
+Issues: env not accessed during db-fill script

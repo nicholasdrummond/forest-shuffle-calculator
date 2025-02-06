@@ -1,34 +1,36 @@
 <template>
-	<PackSelector />
+	<PackSelector @selectionToggled="setSelectedPacks"/>
+
+	<footer>
+		<button @click="">Next</button>
+	</footer>
 </template>
 
 <script>
 import PackSelector from '@/components/PackSelector.vue';
+import ForestBuilder from '@/components/ForestBuilder.vue';
 
 export default {
 	name: 'Forestview',
 	components: {
-		PackSelector
+		PackSelector,
+		ForestBuilder
 	},
 	data() {
 		return {
-			cards: []
+			selectedPackIds: []
 		}
 	},
 	props: {
 
 	},
 	methods: {
-
+		setSelectedPacks (selectedPackIds) {
+			this.selectedPackIds = selectedPackIds
+		}
 	},
 	mounted() {
-		this.$axios.get('card')
-			.then((res) => {
-				this.cards = res.data
-			})
-			.catch((err) => {
-				console.log(err)
-			})
+
 	}
 }
 </script>

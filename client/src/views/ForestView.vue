@@ -1,14 +1,17 @@
 <template>
-	<PackSelector @selectionToggled="setSelectedPacks"/>
+	<PackSelector v-if="!forestView" @selectionToggled="setSelectedPacks"/>
+	<ForestBuilder v-else />
 
 	<footer>
-		<button @click="">Next</button>
+		<button v-if="!forestView" @click="openForest">Next</button>
 	</footer>
 </template>
 
 <script>
-import PackSelector from '@/components/PackSelector.vue';
-import ForestBuilder from '@/components/ForestBuilder.vue';
+import PackSelector from '@/components/PackSelector.vue'
+import ForestBuilder from '@/components/ForestBuilder.vue'
+import { mapStores } from 'pinia';
+import { useCardsStore } from '@/stores/cards';
 
 export default {
 	name: 'Forestview',
@@ -18,15 +21,23 @@ export default {
 	},
 	data() {
 		return {
-			selectedPackIds: []
+			selectedPackIds: [],
+			forestView: false
 		}
 	},
 	props: {
 
 	},
+	computed: {
+		...mapStores(useCardsStore)
+	},
 	methods: {
 		setSelectedPacks (selectedPackIds) {
 			this.selectedPackIds = selectedPackIds
+		},
+		openForest () {
+			this.forestView = true
+			this.cardsStore.loadCards(this.selectedPackIds)
 		}
 	},
 	mounted() {

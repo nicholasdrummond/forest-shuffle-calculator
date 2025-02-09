@@ -1,37 +1,30 @@
 <template>
 	<p>Forest Builder Placeholder</p>
-    <p>Card Count {{cards.length}}</p>
+    <p>Player Count {{players}}</p>
+	<p>Card Cound {{this.cardsStore.allCards.length}}</p>
 </template>
 
 <script>
+import { useCardsStore } from '@/stores/cards';
+import { mapStores } from 'pinia';
+
 export default {
 	data() {
 		return {
-			cards: [],
+			players: 1,
 		}
 	},
     props: {
-        packIds: {
-            type: Array,
-            required: true
-        }
+
     },
 	computed: {
-
+		...mapStores(useCardsStore)
 	},
 	methods: {
 
 	},
 	mounted() {
-        packIds.forEach(id => {
-            this.$axios.get(`card/pack/${id}`)
-				.then((res) => {
-					this.cards.concat(res.data)
-				})
-				.catch((err) => {
-					console.log(err)
-				})
-        })
+        
 	}
 }
 </script>

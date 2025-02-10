@@ -3,7 +3,6 @@
         "name": "Base Game",
         "cards": [
             {
-                "count": 1,
                 "cost": 0,
                 "name": "Peacock Butterfly",
                 "score": [
@@ -28,7 +27,6 @@
                 "tree_type": "horse_chestnut"
             },
             {
-                "count": 1,
                 "cost": 0,
                 "name": "Fireflies",
                 "score": [
@@ -47,7 +45,6 @@
                 "tree_type": "beech"
             },
             {
-                "count": 7,
                 "cost": 2,
                 "name": "Oak",
                 "score": [
@@ -62,7 +59,90 @@
                 "tree_type": "oak"
             },
             {
-                "count": 1,
+                "cost": 2,
+                "name": "Oak",
+                "score": [
+                    {
+                        "operator": "fixed",
+                        "operand": 10,
+                        "condition": "tree_max_species"
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "oak"
+            },
+            {
+                "cost": 2,
+                "name": "Oak",
+                "score": [
+                    {
+                        "operator": "fixed",
+                        "operand": 10,
+                        "condition": "tree_max_species"
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "oak"
+            },
+            {
+                "cost": 2,
+                "name": "Oak",
+                "score": [
+                    {
+                        "operator": "fixed",
+                        "operand": 10,
+                        "condition": "tree_max_species"
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "oak"
+            },
+            {
+                "cost": 2,
+                "name": "Oak",
+                "score": [
+                    {
+                        "operator": "fixed",
+                        "operand": 10,
+                        "condition": "tree_max_species"
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "oak"
+            },
+            {
+                "cost": 2,
+                "name": "Oak",
+                "score": [
+                    {
+                        "operator": "fixed",
+                        "operand": 10,
+                        "condition": "tree_max_species"
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "oak"
+            },
+            {
+                "cost": 2,
+                "name": "Oak",
+                "score": [
+                    {
+                        "operator": "fixed",
+                        "operand": 10,
+                        "condition": "tree_max_species"
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "oak"
+            },
+            {
                 "cost": 0,
                 "name": "Red Squirrel",
                 "score": [
@@ -78,7 +158,6 @@
                 "tree_type": "douglas_fir"
             },
             {
-                "count": 1,
                 "cost": 0,
                 "name": "Common Toad",
                 "score": [
@@ -95,7 +174,6 @@
                 "tree_type": "horse_chestnut"
             },
             {
-                "count": 1,
                 "cost": 1,
                 "name": "Lynx",
                 "score": [
@@ -112,7 +190,6 @@
                 "tree_type": "horse_chestnut"
             },
             {
-                "count": 1,
                 "cost": 2,
                 "name": "Red Fox",
                 "score": [
@@ -128,7 +205,6 @@
                 "tree_type": "douglas_fir"
             },
             {
-                "count": 1,
                 "cost": 0,
                 "name": "Peacock Butterfly",
                 "score": [
@@ -153,7 +229,6 @@
                 "tree_type": "silver_fir"
             },
             {
-                "count": 1,
                 "cost": 1,
                 "name": "Hedgehog",
                 "score": [
@@ -169,7 +244,6 @@
                 "tree_type": "oak"
             },
             {
-                "count": 10,
                 "cost": 1,
                 "name": "Beech",
                 "score": [
@@ -186,7 +260,150 @@
                 "tree_type": "beech"
             },
             {
-                "count": 1,
+                "cost": 1,
+                "name": "Beech",
+                "score": [
+                    {
+                        "operator": "fixed",
+                        "operand": 5,
+                        "condition": "tree_type_count",
+                        "condition_target": "beech",
+                        "condition_count": "4"
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "beech"
+            },
+            {
+                "cost": 1,
+                "name": "Beech",
+                "score": [
+                    {
+                        "operator": "fixed",
+                        "operand": 5,
+                        "condition": "tree_type_count",
+                        "condition_target": "beech",
+                        "condition_count": "4"
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "beech"
+            },
+            {
+                "cost": 1,
+                "name": "Beech",
+                "score": [
+                    {
+                        "operator": "fixed",
+                        "operand": 5,
+                        "condition": "tree_type_count",
+                        "condition_target": "beech",
+                        "condition_count": "4"
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "beech"
+            },
+            {
+                "cost": 1,
+                "name": "Beech",
+                "score": [
+                    {
+                        "operator": "fixed",
+                        "operand": 5,
+                        "condition": "tree_type_count",
+                        "condition_target": "beech",
+                        "condition_count": "4"
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "beech"
+            },
+            {
+                "cost": 1,
+                "name": "Beech",
+                "score": [
+                    {
+                        "operator": "fixed",
+                        "operand": 5,
+                        "condition": "tree_type_count",
+                        "condition_target": "beech",
+                        "condition_count": "4"
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "beech"
+            },
+            {
+                "cost": 1,
+                "name": "Beech",
+                "score": [
+                    {
+                        "operator": "fixed",
+                        "operand": 5,
+                        "condition": "tree_type_count",
+                        "condition_target": "beech",
+                        "condition_count": "4"
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "beech"
+            },
+            {
+                "cost": 1,
+                "name": "Beech",
+                "score": [
+                    {
+                        "operator": "fixed",
+                        "operand": 5,
+                        "condition": "tree_type_count",
+                        "condition_target": "beech",
+                        "condition_count": "4"
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "beech"
+            },
+            {
+                "cost": 1,
+                "name": "Beech",
+                "score": [
+                    {
+                        "operator": "fixed",
+                        "operand": 5,
+                        "condition": "tree_type_count",
+                        "condition_target": "beech",
+                        "condition_count": "4"
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "beech"
+            },
+            {
+                "cost": 1,
+                "name": "Beech",
+                "score": [
+                    {
+                        "operator": "fixed",
+                        "operand": 5,
+                        "condition": "tree_type_count",
+                        "condition_target": "beech",
+                        "condition_count": "4"
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "beech"
+            },
+            {
                 "cost": 2,
                 "name": "Red Deer",
                 "score": [
@@ -208,7 +425,6 @@
                 "tree_type": "silver_fir"
             },
             {
-                "count": 1,
                 "cost": 2,
                 "name": "Fallow Deer",
                 "score": [
@@ -227,7 +443,6 @@
                 "tree_type": "sycamore"
             },
             {
-                "count": 1,
                 "cost": 3,
                 "name": "Wolf",
                 "score": [
@@ -243,7 +458,6 @@
                 "tree_type": "douglas_fir"
             },
             {
-                "count": 1,
                 "cost": 0,
                 "name": "Gnat",
                 "score": [
@@ -259,7 +473,6 @@
                 "tree_type": "horse_chestnut"
             },
             {
-                "count": 6,
                 "cost": 2,
                 "name": "Sycamore",
                 "score": [
@@ -275,7 +488,81 @@
                 "tree_type": "sycamore"
             },
             {
-                "count": 1,
+                "cost": 2,
+                "name": "Sycamore",
+                "score": [
+                    {
+                        "operator": "multiplication",
+                        "operand": 1,
+                        "condition": "species",
+                        "condition_target": "tree"
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "sycamore"
+            },
+            {
+                "cost": 2,
+                "name": "Sycamore",
+                "score": [
+                    {
+                        "operator": "multiplication",
+                        "operand": 1,
+                        "condition": "species",
+                        "condition_target": "tree"
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "sycamore"
+            },
+            {
+                "cost": 2,
+                "name": "Sycamore",
+                "score": [
+                    {
+                        "operator": "multiplication",
+                        "operand": 1,
+                        "condition": "species",
+                        "condition_target": "tree"
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "sycamore"
+            },
+            {
+                "cost": 2,
+                "name": "Sycamore",
+                "score": [
+                    {
+                        "operator": "multiplication",
+                        "operand": 1,
+                        "condition": "species",
+                        "condition_target": "tree"
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "sycamore"
+            },
+            {
+                "cost": 2,
+                "name": "Sycamore",
+                "score": [
+                    {
+                        "operator": "multiplication",
+                        "operand": 1,
+                        "condition": "species",
+                        "condition_target": "tree"
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "sycamore"
+            },
+            {
                 "cost": 3,
                 "name": "Wolf",
                 "score": [
@@ -291,7 +578,6 @@
                 "tree_type": "sycamore"
             },
             {
-                "count": 2,
                 "cost": 1,
                 "name": "Greater Horse-shoe Bat",
                 "score": [
@@ -308,7 +594,22 @@
                 "tree_type": "linden"
             },
             {
-                "count": 1,
+                "cost": 1,
+                "name": "Greater Horse-shoe Bat",
+                "score": [
+                    {
+                        "operator": "fixed",
+                        "operand": 5,
+                        "condition": "species_count",
+                        "condition_target": "bat",
+                        "condition_count": 3
+                    }
+                ],
+                "side": "right",
+                "species": "bat",
+                "tree_type": "linden"
+            },
+            {
                 "cost": 0,
                 "name": "Purple Emperor",
                 "score": [
@@ -333,7 +634,6 @@
                 "tree_type": "birch"
             },
             {
-                "count": 2,
                 "cost": 0,
                 "name": "Tree Frog",
                 "score": [
@@ -349,7 +649,21 @@
                 "tree_type": "oak"
             },
             {
-                "count": 9,
+                "cost": 0,
+                "name": "Tree Frog",
+                "score": [
+                    {
+                        "operator": "multiplication",
+                        "operand": 5,
+                        "condition": "name_count",
+                        "condition_target": "Gnat"
+                    }
+                ],
+                "side": "bottom",
+                "species": "amphibian",
+                "tree_type": "oak"
+            },
+            {
                 "cost": 1,
                 "name": "Linden",
                 "score": [
@@ -369,7 +683,158 @@
                 "tree_type": "linden"
             },
             {
-                "count": 2,
+                "cost": 1,
+                "name": "Linden",
+                "score": [
+                    {
+                        "operator": "fixed",
+                        "operand": 1
+                    },
+                    {
+                        "operator": "fixed",
+                        "operand": 3,
+                        "condition": "most_total",
+                        "condition_target": "linden"
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "linden"
+            },
+            {
+                "cost": 1,
+                "name": "Linden",
+                "score": [
+                    {
+                        "operator": "fixed",
+                        "operand": 1
+                    },
+                    {
+                        "operator": "fixed",
+                        "operand": 3,
+                        "condition": "most_total",
+                        "condition_target": "linden"
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "linden"
+            },
+            {
+                "cost": 1,
+                "name": "Linden",
+                "score": [
+                    {
+                        "operator": "fixed",
+                        "operand": 1
+                    },
+                    {
+                        "operator": "fixed",
+                        "operand": 3,
+                        "condition": "most_total",
+                        "condition_target": "linden"
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "linden"
+            },
+            {
+                "cost": 1,
+                "name": "Linden",
+                "score": [
+                    {
+                        "operator": "fixed",
+                        "operand": 1
+                    },
+                    {
+                        "operator": "fixed",
+                        "operand": 3,
+                        "condition": "most_total",
+                        "condition_target": "linden"
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "linden"
+            },
+            {
+                "cost": 1,
+                "name": "Linden",
+                "score": [
+                    {
+                        "operator": "fixed",
+                        "operand": 1
+                    },
+                    {
+                        "operator": "fixed",
+                        "operand": 3,
+                        "condition": "most_total",
+                        "condition_target": "linden"
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "linden"
+            },
+            {
+                "cost": 1,
+                "name": "Linden",
+                "score": [
+                    {
+                        "operator": "fixed",
+                        "operand": 1
+                    },
+                    {
+                        "operator": "fixed",
+                        "operand": 3,
+                        "condition": "most_total",
+                        "condition_target": "linden"
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "linden"
+            },
+            {
+                "cost": 1,
+                "name": "Linden",
+                "score": [
+                    {
+                        "operator": "fixed",
+                        "operand": 1
+                    },
+                    {
+                        "operator": "fixed",
+                        "operand": 3,
+                        "condition": "most_total",
+                        "condition_target": "linden"
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "linden"
+            },
+            {
+                "cost": 1,
+                "name": "Linden",
+                "score": [
+                    {
+                        "operator": "fixed",
+                        "operand": 1
+                    },
+                    {
+                        "operator": "fixed",
+                        "operand": 3,
+                        "condition": "most_total",
+                        "condition_target": "linden"
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "linden"
+            },
+            {
                 "cost": 2,
                 "name": "Fallow Deer",
                 "score": [
@@ -388,7 +853,24 @@
                 "tree_type": "linden"
             },
             {
-                "count": 1,
+                "cost": 2,
+                "name": "Fallow Deer",
+                "score": [
+                    {
+                        "operator": "multiplication",
+                        "operand": 3,
+                        "condition": "species",
+                        "condition_target": "cloven-hoofed_animal"
+                    }
+                ],
+                "side": "left",
+                "species": [
+                    "cloven-hoofed_animal",
+                    "deer"
+                ],
+                "tree_type": "linden"
+            },
+            {
                 "cost": 2,
                 "name": "Roe Deer",
                 "score": [
@@ -407,7 +889,6 @@
                 "tree_type": "birch"
             },
             {
-                "count": 1,
                 "cost": 1,
                 "name": "Barbastelle Bat",
                 "score": [
@@ -424,7 +905,6 @@
                 "tree_type": "horse_chestnut"
             },
             {
-                "count": 1,
                 "cost": 2,
                 "name": "Wild Boar",
                 "score": [
@@ -441,7 +921,6 @@
                 "tree_type": "oak"
             },
             {
-                "count": 2,
                 "cost": 0,
                 "name": "Large Tortoiseshell",
                 "score": [
@@ -466,7 +945,30 @@
                 "tree_type": "silver_fir"
             },
             {
-                "count": 1,
+                "cost": 0,
+                "name": "Large Tortoiseshell",
+                "score": [
+                    {
+                        "operator": "map",
+                        "operand": [
+                            0,
+                            3,
+                            6,
+                            12,
+                            20
+                        ],
+                        "condition": "sub_species",
+                        "condition_target": "butterfly"
+                    }
+                ],
+                "side": "top",
+                "species": [
+                    "butterfly",
+                    "insect"
+                ],
+                "tree_type": "silver_fir"
+            },
+            {
                 "cost": 0,
                 "name": "Blackberries",
                 "score": [
@@ -482,7 +984,6 @@
                 "tree_type": "birch"
             },
             {
-                "count": 11,
                 "cost": 1,
                 "name": "Horse Chestnut",
                 "score": [
@@ -506,7 +1007,236 @@
                 "tree_type": "horse_chestnut"
             },
             {
-                "count": 1,
+                "cost": 1,
+                "name": "Horse Chestnut",
+                "score": [
+                    {
+                        "operator": "map",
+                        "operand": [
+                            1,
+                            4,
+                            9,
+                            16,
+                            25,
+                            36,
+                            49
+                        ],
+                        "condition": "tree_type",
+                        "condition_target": "horse_chestnut"
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "horse_chestnut"
+            },
+            {
+                "cost": 1,
+                "name": "Horse Chestnut",
+                "score": [
+                    {
+                        "operator": "map",
+                        "operand": [
+                            1,
+                            4,
+                            9,
+                            16,
+                            25,
+                            36,
+                            49
+                        ],
+                        "condition": "tree_type",
+                        "condition_target": "horse_chestnut"
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "horse_chestnut"
+            },
+            {
+                "cost": 1,
+                "name": "Horse Chestnut",
+                "score": [
+                    {
+                        "operator": "map",
+                        "operand": [
+                            1,
+                            4,
+                            9,
+                            16,
+                            25,
+                            36,
+                            49
+                        ],
+                        "condition": "tree_type",
+                        "condition_target": "horse_chestnut"
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "horse_chestnut"
+            },
+            {
+                "cost": 1,
+                "name": "Horse Chestnut",
+                "score": [
+                    {
+                        "operator": "map",
+                        "operand": [
+                            1,
+                            4,
+                            9,
+                            16,
+                            25,
+                            36,
+                            49
+                        ],
+                        "condition": "tree_type",
+                        "condition_target": "horse_chestnut"
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "horse_chestnut"
+            },
+            {
+                "cost": 1,
+                "name": "Horse Chestnut",
+                "score": [
+                    {
+                        "operator": "map",
+                        "operand": [
+                            1,
+                            4,
+                            9,
+                            16,
+                            25,
+                            36,
+                            49
+                        ],
+                        "condition": "tree_type",
+                        "condition_target": "horse_chestnut"
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "horse_chestnut"
+            },
+            {
+                "cost": 1,
+                "name": "Horse Chestnut",
+                "score": [
+                    {
+                        "operator": "map",
+                        "operand": [
+                            1,
+                            4,
+                            9,
+                            16,
+                            25,
+                            36,
+                            49
+                        ],
+                        "condition": "tree_type",
+                        "condition_target": "horse_chestnut"
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "horse_chestnut"
+            },
+            {
+                "cost": 1,
+                "name": "Horse Chestnut",
+                "score": [
+                    {
+                        "operator": "map",
+                        "operand": [
+                            1,
+                            4,
+                            9,
+                            16,
+                            25,
+                            36,
+                            49
+                        ],
+                        "condition": "tree_type",
+                        "condition_target": "horse_chestnut"
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "horse_chestnut"
+            },
+            {
+                "cost": 1,
+                "name": "Horse Chestnut",
+                "score": [
+                    {
+                        "operator": "map",
+                        "operand": [
+                            1,
+                            4,
+                            9,
+                            16,
+                            25,
+                            36,
+                            49
+                        ],
+                        "condition": "tree_type",
+                        "condition_target": "horse_chestnut"
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "horse_chestnut"
+            },
+            {
+                "cost": 1,
+                "name": "Horse Chestnut",
+                "score": [
+                    {
+                        "operator": "map",
+                        "operand": [
+                            1,
+                            4,
+                            9,
+                            16,
+                            25,
+                            36,
+                            49
+                        ],
+                        "condition": "tree_type",
+                        "condition_target": "horse_chestnut"
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "horse_chestnut"
+            },
+            {
+                "cost": 1,
+                "name": "Horse Chestnut",
+                "score": [
+                    {
+                        "operator": "map",
+                        "operand": [
+                            1,
+                            4,
+                            9,
+                            16,
+                            25,
+                            36,
+                            49
+                        ],
+                        "condition": "tree_type",
+                        "condition_target": "horse_chestnut"
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "horse_chestnut"
+            },
+            {
                 "cost": 1,
                 "name": "Bechstein's Bat",
                 "score": [
@@ -523,7 +1253,6 @@
                 "tree_type": "oak"
             },
             {
-                "count": 1,
                 "cost": 1,
                 "name": "Chaffinch",
                 "score": [
@@ -539,7 +1268,6 @@
                 "tree_type": "beech"
             },
             {
-                "count": 1,
                 "cost": 0,
                 "name": "Common Toad",
                 "score": [
@@ -556,7 +1284,6 @@
                 "tree_type": "silver_fir"
             },
             {
-                "count": 2,
                 "cost": 1,
                 "name": "Brown Long-Eared Bat",
                 "score": [
@@ -573,7 +1300,22 @@
                 "tree_type": "sycamore"
             },
             {
-                "count": 2,
+                "cost": 1,
+                "name": "Brown Long-Eared Bat",
+                "score": [
+                    {
+                        "operator": "fixed",
+                        "operand": 5,
+                        "condition": "species_count",
+                        "condition_target": "bat",
+                        "condition_count": 3
+                    }
+                ],
+                "side": "left",
+                "species": "bat",
+                "tree_type": "sycamore"
+            },
+            {
                 "cost": 1,
                 "name": "European Badger",
                 "score": [
@@ -587,7 +1329,19 @@
                 "tree_type": "douglas_fir"
             },
             {
-                "count": 2,
+                "cost": 1,
+                "name": "European Badger",
+                "score": [
+                    {
+                        "operator": "fixed",
+                        "operand": 2
+                    }
+                ],
+                "side": "right",
+                "species": "pawed_animal",
+                "tree_type": "douglas_fir"
+            },
+            {
                 "cost": 2,
                 "name": "Tawny Owl",
                 "score": [
@@ -601,7 +1355,19 @@
                 "tree_type": "beech"
             },
             {
-                "count": 1,
+                "cost": 2,
+                "name": "Tawny Owl",
+                "score": [
+                    {
+                        "operator": "fixed",
+                        "operand": 5
+                    }
+                ],
+                "side": "top",
+                "species": "bird",
+                "tree_type": "beech"
+            },
+            {
                 "cost": 2,
                 "name": "Stag Beetle",
                 "score": [
@@ -617,7 +1383,6 @@
                 "tree_type": "sycamore"
             },
             {
-                "count": 1,
                 "cost": 0,
                 "name": "European Hare",
                 "score": [
@@ -633,7 +1398,6 @@
                 "tree_type": "oak"
             },
             {
-                "count": 1,
                 "cost": 0,
                 "name": "Peacock Butterfly",
                 "score": [
@@ -658,7 +1422,6 @@
                 "tree_type": "linden"
             },
             {
-                "count": 1,
                 "cost": 0,
                 "name": "Common Toad",
                 "score": [
@@ -675,7 +1438,6 @@
                 "tree_type": "beech"
             },
             {
-                "count": 1,
                 "cost": 0,
                 "name": "European Hare",
                 "score": [
@@ -691,7 +1453,6 @@
                 "tree_type": "linden"
             },
             {
-                "count": 1,
                 "cost": 2,
                 "name": "Wild Boar",
                 "score": [
@@ -708,7 +1469,6 @@
                 "tree_type": "birch"
             },
             {
-                "count": 1,
                 "cost": 1,
                 "name": "Beech Marten",
                 "score": [
@@ -723,7 +1483,6 @@
                 "tree_type": "oak"
             },
             {
-                "count": 1,
                 "cost": 1,
                 "name": "Barbastelle Bat",
                 "score": [
@@ -740,7 +1499,6 @@
                 "tree_type": "oak"
             },
             {
-                "count": 1,
                 "cost": 1,
                 "name": "European Fat Dormouse",
                 "score": [
@@ -757,7 +1515,6 @@
                 "tree_type": "beech"
             },
             {
-                "count": 1,
                 "cost": 1,
                 "name": "European Fat Dormouse",
                 "score": [
@@ -774,7 +1531,6 @@
                 "tree_type": "silver_fir"
             },
             {
-                "count": 1,
                 "cost": 1,
                 "name": "Brown Long-Eared Bat",
                 "score": [
@@ -791,7 +1547,6 @@
                 "tree_type": "beech"
             },
             {
-                "count": 1,
                 "cost": 1,
                 "name": "Eurasian Jay",
                 "score": [
@@ -805,7 +1560,6 @@
                 "tree_type": "sycamore"
             },
             {
-                "count": 1,
                 "cost": 2,
                 "name": "Fly Agaric",
                 "side": "bottom",
@@ -813,7 +1567,6 @@
                 "tree_type": "silver_fir"
             },
             {
-                "count": 6,
                 "cost": 2,
                 "name": "Silver Fir",
                 "score": [
@@ -828,7 +1581,76 @@
                 "tree_type": "silver_fir"
             },
             {
-                "count": 1,
+                "cost": 2,
+                "name": "Silver Fir",
+                "score": [
+                    {
+                        "operator": "multiplication",
+                        "operand": 2,
+                        "condition": "attached_count"
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "silver_fir"
+            },
+            {
+                "cost": 2,
+                "name": "Silver Fir",
+                "score": [
+                    {
+                        "operator": "multiplication",
+                        "operand": 2,
+                        "condition": "attached_count"
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "silver_fir"
+            },
+            {
+                "cost": 2,
+                "name": "Silver Fir",
+                "score": [
+                    {
+                        "operator": "multiplication",
+                        "operand": 2,
+                        "condition": "attached_count"
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "silver_fir"
+            },
+            {
+                "cost": 2,
+                "name": "Silver Fir",
+                "score": [
+                    {
+                        "operator": "multiplication",
+                        "operand": 2,
+                        "condition": "attached_count"
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "silver_fir"
+            },
+            {
+                "cost": 2,
+                "name": "Silver Fir",
+                "score": [
+                    {
+                        "operator": "multiplication",
+                        "operand": 2,
+                        "condition": "attached_count"
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "silver_fir"
+            },
+            {
                 "cost": 1,
                 "name": "Greater Horse-shoe Bat",
                 "score": [
@@ -845,7 +1667,6 @@
                 "tree_type": "beech"
             },
             {
-                "count": 1,
                 "cost": 1,
                 "name": "European Fat Dormouse",
                 "score": [
@@ -862,7 +1683,6 @@
                 "tree_type": "douglas_fir"
             },
             {
-                "count": 2,
                 "cost": 1,
                 "name": "European Badger",
                 "score": [
@@ -876,7 +1696,19 @@
                 "tree_type": "horse_chestnut"
             },
             {
-                "count": 1,
+                "cost": 1,
+                "name": "European Badger",
+                "score": [
+                    {
+                        "operator": "fixed",
+                        "operand": 2
+                    }
+                ],
+                "side": "left",
+                "species": "pawed_animal",
+                "tree_type": "horse_chestnut"
+            },
+            {
                 "cost": 2,
                 "name": "Fallow Deer",
                 "score": [
@@ -895,7 +1727,6 @@
                 "tree_type": "birch"
             },
             {
-                "count": 1,
                 "cost": 2,
                 "name": "Red Deer",
                 "score": [
@@ -917,7 +1748,6 @@
                 "tree_type": "linden"
             },
             {
-                "count": 1,
                 "cost": 3,
                 "name": "Brown Bear",
                 "side": "right",
@@ -925,7 +1755,6 @@
                 "tree_type": "beech"
             },
             {
-                "count": 2,
                 "cost": 0,
                 "name": "Purple Emperor",
                 "score": [
@@ -950,7 +1779,30 @@
                 "tree_type": "horse_chestnut"
             },
             {
-                "count": 1,
+                "cost": 0,
+                "name": "Purple Emperor",
+                "score": [
+                    {
+                        "operator": "map",
+                        "operand": [
+                            0,
+                            3,
+                            6,
+                            12,
+                            20
+                        ],
+                        "condition": "sub_species",
+                        "condition_target": "butterfly"
+                    }
+                ],
+                "side": "top",
+                "species": [
+                    "butterfly",
+                    "insect"
+                ],
+                "tree_type": "horse_chestnut"
+            },
+            {
                 "cost": 0,
                 "name": "Moss",
                 "score": [
@@ -966,7 +1818,6 @@
                 "tree_type": "douglas_fir"
             },
             {
-                "count": 7,
                 "cost": 2,
                 "name": "Douglas Fir",
                 "score": [
@@ -980,7 +1831,84 @@
                 "tree_type": "douglas_fir"
             },
             {
-                "count": 1,
+                "cost": 2,
+                "name": "Douglas Fir",
+                "score": [
+                    {
+                        "operator": "fixed",
+                        "operand": 5
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "douglas_fir"
+            },
+            {
+                "cost": 2,
+                "name": "Douglas Fir",
+                "score": [
+                    {
+                        "operator": "fixed",
+                        "operand": 5
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "douglas_fir"
+            },
+            {
+                "cost": 2,
+                "name": "Douglas Fir",
+                "score": [
+                    {
+                        "operator": "fixed",
+                        "operand": 5
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "douglas_fir"
+            },
+            {
+                "cost": 2,
+                "name": "Douglas Fir",
+                "score": [
+                    {
+                        "operator": "fixed",
+                        "operand": 5
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "douglas_fir"
+            },
+            {
+                "cost": 2,
+                "name": "Douglas Fir",
+                "score": [
+                    {
+                        "operator": "fixed",
+                        "operand": 5
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "douglas_fir"
+            },
+            {
+                "cost": 2,
+                "name": "Douglas Fir",
+                "score": [
+                    {
+                        "operator": "fixed",
+                        "operand": 5
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "douglas_fir"
+            },
+            {
                 "cost": 0,
                 "name": "Large Tortoiseshell",
                 "score": [
@@ -1005,7 +1933,6 @@
                 "tree_type": "beech"
             },
             {
-                "count": 1,
                 "cost": 2,
                 "name": "Mole",
                 "side": "bottom",
@@ -1013,7 +1940,6 @@
                 "tree_type": "sycamore"
             },
             {
-                "count": 10,
                 "cost": 0,
                 "name": "Birch",
                 "score": [
@@ -1027,7 +1953,123 @@
                 "tree_type": "birch"
             },
             {
-                "count": 1,
+                "cost": 0,
+                "name": "Birch",
+                "score": [
+                    {
+                        "operator": "fixed",
+                        "operand": 1
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "birch"
+            },
+            {
+                "cost": 0,
+                "name": "Birch",
+                "score": [
+                    {
+                        "operator": "fixed",
+                        "operand": 1
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "birch"
+            },
+            {
+                "cost": 0,
+                "name": "Birch",
+                "score": [
+                    {
+                        "operator": "fixed",
+                        "operand": 1
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "birch"
+            },
+            {
+                "cost": 0,
+                "name": "Birch",
+                "score": [
+                    {
+                        "operator": "fixed",
+                        "operand": 1
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "birch"
+            },
+            {
+                "cost": 0,
+                "name": "Birch",
+                "score": [
+                    {
+                        "operator": "fixed",
+                        "operand": 1
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "birch"
+            },
+            {
+                "cost": 0,
+                "name": "Birch",
+                "score": [
+                    {
+                        "operator": "fixed",
+                        "operand": 1
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "birch"
+            },
+            {
+                "cost": 0,
+                "name": "Birch",
+                "score": [
+                    {
+                        "operator": "fixed",
+                        "operand": 1
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "birch"
+            },
+            {
+                "cost": 0,
+                "name": "Birch",
+                "score": [
+                    {
+                        "operator": "fixed",
+                        "operand": 1
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "birch"
+            },
+            {
+                "cost": 0,
+                "name": "Birch",
+                "score": [
+                    {
+                        "operator": "fixed",
+                        "operand": 1
+                    }
+                ],
+                "side": "center",
+                "species": "tree",
+                "tree_type": "birch"
+            },
+            {
                 "cost": 1,
                 "name": "Bechstein's Bat",
                 "score": [
@@ -1044,7 +2086,6 @@
                 "tree_type": "beech"
             },
             {
-                "count": 1,
                 "cost": 1,
                 "name": "European Fat Dormouse",
                 "score": [
@@ -1061,7 +2102,6 @@
                 "tree_type": "oak"
             },
             {
-                "count": 2,
                 "cost": 2,
                 "name": "Goshawk",
                 "score": [
@@ -1077,7 +2117,21 @@
                 "tree_type": "silver_fir"
             },
             {
-                "count": 1,
+                "cost": 2,
+                "name": "Goshawk",
+                "score": [
+                    {
+                        "operator": "multiplication",
+                        "operand": 3,
+                        "condition": "species",
+                        "condition_target": "bird"
+                    }
+                ],
+                "side": "top",
+                "species": "bird",
+                "tree_type": "silver_fir"
+            },
+            {
                 "cost": 1,
                 "name": "Hedgehog",
                 "score": [
@@ -1093,7 +2147,6 @@
                 "tree_type": "horse_chestnut"
             },
             {
-                "count": 2,
                 "cost": 2,
                 "name": "Wild Boar",
                 "score": [
@@ -1110,7 +2163,22 @@
                 "tree_type": "sycamore"
             },
             {
-                "count": 1,
+                "cost": 2,
+                "name": "Wild Boar",
+                "score": [
+                    {
+                        "operator": "fixed",
+                        "operand": 10,
+                        "condition": "dependant",
+                        "condition_target": "Squeaker",
+                        "condition_count": 1
+                    }
+                ],
+                "side": "left",
+                "species": "cloven-hoofed_animal",
+                "tree_type": "sycamore"
+            },
+            {
                 "cost": 0,
                 "name": "European Hare",
                 "score": [
@@ -1126,7 +2194,6 @@
                 "tree_type": "silver_fir"
             },
             {
-                "count": 1,
                 "cost": 2,
                 "name": "Pond Turtle",
                 "score": [
@@ -1140,7 +2207,6 @@
                 "tree_type": "sycamore"
             },
             {
-                "count": 1,
                 "cost": 3,
                 "name": "Brown Bear",
                 "side": "left",
@@ -1148,7 +2214,6 @@
                 "tree_type": "linden"
             },
             {
-                "count": 1,
                 "cost": 1,
                 "name": "Raccoon",
                 "side": "right",
@@ -1156,7 +2221,6 @@
                 "tree_type": "silver_fir"
             },
             {
-                "count": 1,
                 "cost": 1,
                 "name": "Violet Carpenter Bee",
                 "side": "left",
@@ -1164,7 +2228,6 @@
                 "tree_type": "silver_fir"
             },
             {
-                "count": 2,
                 "cost": 1,
                 "name": "Violet Carpenter Bee",
                 "side": "right",
@@ -1172,7 +2235,13 @@
                 "tree_type": "douglas_fir"
             },
             {
-                "count": 2,
+                "cost": 1,
+                "name": "Violet Carpenter Bee",
+                "side": "right",
+                "species": "insect",
+                "tree_type": "douglas_fir"
+            },
+            {
                 "cost": 0,
                 "name": "European Hare",
                 "score": [
@@ -1188,7 +2257,21 @@
                 "tree_type": "sycamore"
             },
             {
-                "count": 2,
+                "cost": 0,
+                "name": "European Hare",
+                "score": [
+                    {
+                        "operator": "multiplication",
+                        "operand": 1,
+                        "condition": "name_count",
+                        "condition_target": "European Hare"
+                    }
+                ],
+                "side": "right",
+                "species": "pawed_animal",
+                "tree_type": "sycamore"
+            },
+            {
                 "cost": 1,
                 "name": "Chaffinch",
                 "score": [
@@ -1204,7 +2287,21 @@
                 "tree_type": "sycamore"
             },
             {
-                "count": 1,
+                "cost": 1,
+                "name": "Chaffinch",
+                "score": [
+                    {
+                        "operator": "fixed",
+                        "operand": 5,
+                        "condition": "on_tree_type",
+                        "condition_target": "beech"
+                    }
+                ],
+                "side": "top",
+                "species": "bird",
+                "tree_type": "sycamore"
+            },
+            {
                 "cost": 2,
                 "name": "Parasol Mushroom",
                 "side": "bottom",
@@ -1212,7 +2309,6 @@
                 "tree_type": "silver_fir"
             },
             {
-                "count": 1,
                 "cost": 0,
                 "name": "Peacock Butterfly",
                 "score": [
@@ -1237,7 +2333,6 @@
                 "tree_type": "oak"
             },
             {
-                "count": 1,
                 "cost": 2,
                 "name": "Chanterelle",
                 "side": "bottom",
@@ -1245,7 +2340,6 @@
                 "tree_type": "silver_fir"
             },
             {
-                "count": 1,
                 "cost": 2,
                 "name": "Roe Deer",
                 "score": [
@@ -1264,7 +2358,6 @@
                 "tree_type": "silver_fir"
             },
             {
-                "count": 1,
                 "cost": 1,
                 "name": "Lynx",
                 "score": [
@@ -1281,7 +2374,6 @@
                 "tree_type": "linden"
             },
             {
-                "count": 1,
                 "cost": 2,
                 "name": "Tawny Owl",
                 "score": [
@@ -1295,7 +2387,6 @@
                 "tree_type": "sycamore"
             },
             {
-                "count": 1,
                 "cost": 0,
                 "name": "Common Toad",
                 "score": [
@@ -1312,7 +2403,6 @@
                 "tree_type": "douglas_fir"
             },
             {
-                "count": 1,
                 "cost": 1,
                 "name": "Violet Carpenter Bee",
                 "side": "left",
@@ -1320,7 +2410,6 @@
                 "tree_type": "douglas_fir"
             },
             {
-                "count": 1,
                 "cost": 1,
                 "name": "Lynx",
                 "score": [
@@ -1337,7 +2426,6 @@
                 "tree_type": "beech"
             },
             {
-                "count": 1,
                 "cost": 0,
                 "name": "Silver-Washed Fritillary",
                 "score": [
@@ -1362,7 +2450,6 @@
                 "tree_type": "beech"
             },
             {
-                "count": 2,
                 "cost": 0,
                 "name": "Moss",
                 "score": [
@@ -1378,7 +2465,21 @@
                 "tree_type": "linden"
             },
             {
-                "count": 2,
+                "cost": 0,
+                "name": "Moss",
+                "score": [
+                    {
+                        "operator": "fixed",
+                        "operand": 10,
+                        "condition": "tree_count",
+                        "condition_count": 10
+                    }
+                ],
+                "side": "bottom",
+                "species": "plant",
+                "tree_type": "linden"
+            },
+            {
                 "cost": 2,
                 "name": "Red Fox",
                 "score": [
@@ -1394,7 +2495,21 @@
                 "tree_type": "linden"
             },
             {
-                "count": 1,
+                "cost": 2,
+                "name": "Red Fox",
+                "score": [
+                    {
+                        "operator": "multiplication",
+                        "operand": 2,
+                        "condition": "name_count",
+                        "condition_target": "European Hare"
+                    }
+                ],
+                "side": "left",
+                "species": "pawed_animal",
+                "tree_type": "linden"
+            },
+            {
                 "cost": 0,
                 "name": "Squeaker",
                 "score": [
@@ -1408,7 +2523,6 @@
                 "tree_type": "horse_chestnut"
             },
             {
-                "count": 1,
                 "cost": 2,
                 "name": "Red Deer",
                 "score": [
@@ -1430,7 +2544,6 @@
                 "tree_type": "oak"
             },
             {
-                "count": 1,
                 "cost": 0,
                 "name": "Gnat",
                 "score": [
@@ -1446,7 +2559,6 @@
                 "tree_type": "oak"
             },
             {
-                "count": 3,
                 "cost": 1,
                 "name": "Bullfinch",
                 "score": [
@@ -1462,7 +2574,36 @@
                 "tree_type": "douglas_fir"
             },
             {
-                "count": 1,
+                "cost": 1,
+                "name": "Bullfinch",
+                "score": [
+                    {
+                        "operator": "multiplication",
+                        "operand": 2,
+                        "condition": "species",
+                        "condition_target": "insect"
+                    }
+                ],
+                "side": "top",
+                "species": "bird",
+                "tree_type": "douglas_fir"
+            },
+            {
+                "cost": 1,
+                "name": "Bullfinch",
+                "score": [
+                    {
+                        "operator": "multiplication",
+                        "operand": 2,
+                        "condition": "species",
+                        "condition_target": "insect"
+                    }
+                ],
+                "side": "top",
+                "species": "bird",
+                "tree_type": "douglas_fir"
+            },
+            {
                 "cost": 1,
                 "name": "Hedgehog",
                 "score": [
@@ -1478,7 +2619,6 @@
                 "tree_type": "beech"
             },
             {
-                "count": 1,
                 "cost": 1,
                 "name": "Barbastelle Bat",
                 "score": [
@@ -1495,7 +2635,6 @@
                 "tree_type": "silver_fir"
             },
             {
-                "count": 2,
                 "cost": 1,
                 "name": "Beech Marten",
                 "score": [
@@ -1510,7 +2649,20 @@
                 "tree_type": "horse_chestnut"
             },
             {
-                "count": 1,
+                "cost": 1,
+                "name": "Beech Marten",
+                "score": [
+                    {
+                        "operator": "fixed",
+                        "operand": 5,
+                        "condition": "tree_full"
+                    }
+                ],
+                "side": "right",
+                "species": "pawed_animal",
+                "tree_type": "horse_chestnut"
+            },
+            {
                 "cost": 1,
                 "name": "Beech Marten",
                 "score": [
@@ -1525,7 +2677,6 @@
                 "tree_type": "beech"
             },
             {
-                "count": 1,
                 "cost": 1,
                 "name": "Bechstein's Bat",
                 "score": [
@@ -1542,7 +2693,6 @@
                 "tree_type": "birch"
             },
             {
-                "count": 1,
                 "cost": 0,
                 "name": "Camberwell Beauty",
                 "score": [
@@ -1567,7 +2717,6 @@
                 "tree_type": "birch"
             },
             {
-                "count": 3,
                 "cost": 1,
                 "name": "Great Spotted Woodpecker",
                 "score": [
@@ -1582,7 +2731,34 @@
                 "tree_type": "linden"
             },
             {
-                "count": 2,
+                "cost": 1,
+                "name": "Great Spotted Woodpecker",
+                "score": [
+                    {
+                        "operator": "fixed",
+                        "operand": 10,
+                        "condition": "most_total"
+                    }
+                ],
+                "side": "top",
+                "species": "bird",
+                "tree_type": "linden"
+            },
+            {
+                "cost": 1,
+                "name": "Great Spotted Woodpecker",
+                "score": [
+                    {
+                        "operator": "fixed",
+                        "operand": 10,
+                        "condition": "most_total"
+                    }
+                ],
+                "side": "top",
+                "species": "bird",
+                "tree_type": "linden"
+            },
+            {
                 "cost": 2,
                 "name": "Penny Bun",
                 "side": "bottom",
@@ -1590,7 +2766,13 @@
                 "tree_type": "douglas_fir"
             },
             {
-                "count": 1,
+                "cost": 2,
+                "name": "Penny Bun",
+                "side": "bottom",
+                "species": "mushroom",
+                "tree_type": "douglas_fir"
+            },
+            {
                 "cost": 2,
                 "name": "Parasol Mushroom",
                 "side": "bottom",
@@ -1598,7 +2780,6 @@
                 "tree_type": "horse_chestnut"
             },
             {
-                "count": 1,
                 "cost": 0,
                 "name": "Tree Frog",
                 "score": [
@@ -1614,7 +2795,6 @@
                 "tree_type": "linden"
             },
             {
-                "count": 2,
                 "cost": 0,
                 "name": "Camberwell Beauty",
                 "score": [
@@ -1639,7 +2819,30 @@
                 "tree_type": "sycamore"
             },
             {
-                "count": 1,
+                "cost": 0,
+                "name": "Camberwell Beauty",
+                "score": [
+                    {
+                        "operator": "map",
+                        "operand": [
+                            0,
+                            3,
+                            6,
+                            12,
+                            20
+                        ],
+                        "condition": "sub_species",
+                        "condition_target": "butterfly"
+                    }
+                ],
+                "side": "top",
+                "species": [
+                    "butterfly",
+                    "insect"
+                ],
+                "tree_type": "sycamore"
+            },
+            {
                 "cost": 2,
                 "name": "Pond Turtle",
                 "score": [
@@ -1653,7 +2856,6 @@
                 "tree_type": "birch"
             },
             {
-                "count": 1,
                 "cost": 0,
                 "name": "European Hare",
                 "score": [
@@ -1669,7 +2871,6 @@
                 "tree_type": "silver_fir"
             },
             {
-                "count": 1,
                 "cost": 2,
                 "name": "Red Fox",
                 "score": [
@@ -1685,7 +2886,6 @@
                 "tree_type": "oak"
             },
             {
-                "count": 1,
                 "cost": 0,
                 "name": "Fireflies",
                 "score": [
@@ -1704,7 +2904,6 @@
                 "tree_type": "linden"
             },
             {
-                "count": 1,
                 "cost": 2,
                 "name": "Roe Deer",
                 "score": [
@@ -1723,7 +2922,6 @@
                 "tree_type": "horse_chestnut"
             },
             {
-                "count": 1,
                 "cost": 0,
                 "name": "Gnat",
                 "score": [
@@ -1739,7 +2937,6 @@
                 "tree_type": "birch"
             },
             {
-                "count": 1,
                 "cost": 1,
                 "name": "Raccoon",
                 "side": "left",
@@ -1747,7 +2944,6 @@
                 "tree_type": "silver_fir"
             },
             {
-                "count": 1,
                 "cost": 2,
                 "name": "Roe Deer",
                 "score": [
@@ -1766,7 +2962,6 @@
                 "tree_type": "beech"
             },
             {
-                "count": 1,
                 "cost": 2,
                 "name": "Fly Agaric",
                 "side": "bottom",
@@ -1774,7 +2969,6 @@
                 "tree_type": "oak"
             },
             {
-                "count": 1,
                 "cost": 0,
                 "name": "Purple Emperor",
                 "score": [
@@ -1799,7 +2993,6 @@
                 "tree_type": "linden"
             },
             {
-                "count": 1,
                 "cost": 1,
                 "name": "Fire Salamander",
                 "score": [
@@ -1819,7 +3012,6 @@
                 "tree_type": "douglas_fir"
             },
             {
-                "count": 2,
                 "cost": 3,
                 "name": "Wolf",
                 "score": [
@@ -1835,7 +3027,21 @@
                 "tree_type": "silver_fir"
             },
             {
-                "count": 1,
+                "cost": 3,
+                "name": "Wolf",
+                "score": [
+                    {
+                        "operator": "multiplication",
+                        "operand": 5,
+                        "condition": "species",
+                        "condition_target": "deer"
+                    }
+                ],
+                "side": "right",
+                "species": "pawed_animal",
+                "tree_type": "silver_fir"
+            },
+            {
                 "cost": 0,
                 "name": "European Hare",
                 "score": [
@@ -1851,7 +3057,6 @@
                 "tree_type": "beech"
             },
             {
-                "count": 2,
                 "cost": 2,
                 "name": "Red Deer",
                 "score": [
@@ -1873,7 +3078,27 @@
                 "tree_type": "horse_chestnut"
             },
             {
-                "count": 1,
+                "cost": 2,
+                "name": "Red Deer",
+                "score": [
+                    {
+                        "operator": "multiplication",
+                        "operand": 1,
+                        "condition": "species",
+                        "condition_target": [
+                            "tree",
+                            "plant"
+                        ]
+                    }
+                ],
+                "side": "right",
+                "species": [
+                    "cloven-hoofed_animal",
+                    "deer"
+                ],
+                "tree_type": "horse_chestnut"
+            },
+            {
                 "cost": 0,
                 "name": "Red Squirrel",
                 "score": [
@@ -1889,7 +3114,6 @@
                 "tree_type": "oak"
             },
             {
-                "count": 1,
                 "cost": 0,
                 "name": "Wild Strawberries",
                 "score": [
@@ -1904,7 +3128,6 @@
                 "tree_type": "birch"
             },
             {
-                "count": 1,
                 "cost": 0,
                 "name": "Common Toad",
                 "score": [
@@ -1921,7 +3144,6 @@
                 "tree_type": "oak"
             },
             {
-                "count": 2,
                 "cost": 0,
                 "name": "European Hare",
                 "score": [
@@ -1937,7 +3159,21 @@
                 "tree_type": "birch"
             },
             {
-                "count": 1,
+                "cost": 0,
+                "name": "European Hare",
+                "score": [
+                    {
+                        "operator": "multiplication",
+                        "operand": 1,
+                        "condition": "name_count",
+                        "condition_target": "European Hare"
+                    }
+                ],
+                "side": "left",
+                "species": "pawed_animal",
+                "tree_type": "birch"
+            },
+            {
                 "cost": 0,
                 "name": "European Hare",
                 "score": [
@@ -1953,7 +3189,6 @@
                 "tree_type": "birch"
             },
             {
-                "count": 2,
                 "cost": 1,
                 "name": "Lynx",
                 "score": [
@@ -1970,7 +3205,22 @@
                 "tree_type": "douglas_fir"
             },
             {
-                "count": 1,
+                "cost": 1,
+                "name": "Lynx",
+                "score": [
+                    {
+                        "operator": "fixed",
+                        "operand": 10,
+                        "condition": "dependant",
+                        "condition_target": "Roe Deer",
+                        "condition_count": 1
+                    }
+                ],
+                "side": "left",
+                "species": "pawed_animal",
+                "tree_type": "douglas_fir"
+            },
+            {
                 "cost": 1,
                 "name": "Raccoon",
                 "side": "right",
@@ -1978,7 +3228,6 @@
                 "tree_type": "birch"
             },
             {
-                "count": 3,
                 "cost": 0,
                 "name": "Silver-Washed Fritillary",
                 "score": [
@@ -2003,7 +3252,54 @@
                 "tree_type": "oak"
             },
             {
-                "count": 1,
+                "cost": 0,
+                "name": "Silver-Washed Fritillary",
+                "score": [
+                    {
+                        "operator": "map",
+                        "operand": [
+                            0,
+                            3,
+                            6,
+                            12,
+                            20
+                        ],
+                        "condition": "sub_species",
+                        "condition_target": "butterfly"
+                    }
+                ],
+                "side": "top",
+                "species": [
+                    "butterfly",
+                    "insect"
+                ],
+                "tree_type": "oak"
+            },
+            {
+                "cost": 0,
+                "name": "Silver-Washed Fritillary",
+                "score": [
+                    {
+                        "operator": "map",
+                        "operand": [
+                            0,
+                            3,
+                            6,
+                            12,
+                            20
+                        ],
+                        "condition": "sub_species",
+                        "condition_target": "butterfly"
+                    }
+                ],
+                "side": "top",
+                "species": [
+                    "butterfly",
+                    "insect"
+                ],
+                "tree_type": "oak"
+            },
+            {
                 "cost": 0,
                 "name": "Blackberries",
                 "score": [
@@ -2019,7 +3315,6 @@
                 "tree_type": "beech"
             },
             {
-                "count": 1,
                 "cost": 1,
                 "name": "Fire Salamander",
                 "score": [
@@ -2039,7 +3334,6 @@
                 "tree_type": "horse_chestnut"
             },
             {
-                "count": 1,
                 "cost": 0,
                 "name": "Red Squirrel",
                 "score": [
@@ -2055,7 +3349,6 @@
                 "tree_type": "beech"
             },
             {
-                "count": 1,
                 "cost": 1,
                 "name": "Fire Salamander",
                 "score": [
@@ -2075,7 +3368,6 @@
                 "tree_type": "linden"
             },
             {
-                "count": 1,
                 "cost": 0,
                 "name": "Squeaker",
                 "score": [
@@ -2089,7 +3381,6 @@
                 "tree_type": "oak"
             },
             {
-                "count": 1,
                 "cost": 1,
                 "name": "Lynx",
                 "score": [
@@ -2106,7 +3397,6 @@
                 "tree_type": "silver_fir"
             },
             {
-                "count": 1,
                 "cost": 2,
                 "name": "Roe Deer",
                 "score": [
@@ -2125,7 +3415,6 @@
                 "tree_type": "linden"
             },
             {
-                "count": 1,
                 "cost": 0,
                 "name": "Squeaker",
                 "score": [
@@ -2139,7 +3428,6 @@
                 "tree_type": "sycamore"
             },
             {
-                "count": 1,
                 "cost": 2,
                 "name": "Stag Beetle",
                 "score": [
@@ -2155,7 +3443,6 @@
                 "tree_type": "birch"
             },
             {
-                "count": 1,
                 "cost": 2,
                 "name": "Goshawk",
                 "score": [
@@ -2171,7 +3458,6 @@
                 "tree_type": "douglas_fir"
             },
             {
-                "count": 1,
                 "cost": 1,
                 "name": "Bullfinch",
                 "score": [
@@ -2187,7 +3473,6 @@
                 "tree_type": "silver_fir"
             },
             {
-                "count": 1,
                 "cost": 1,
                 "name": "Tree Ferns",
                 "score": [
@@ -2203,7 +3488,6 @@
                 "tree_type": "linden"
             },
             {
-                "count": 1,
                 "cost": 0,
                 "name": "Squeaker",
                 "score": [
@@ -2217,7 +3501,6 @@
                 "tree_type": "oak"
             },
             {
-                "count": 1,
                 "cost": 2,
                 "name": "Red Fox",
                 "score": [
@@ -2233,7 +3516,6 @@
                 "tree_type": "beech"
             },
             {
-                "count": 1,
                 "cost": 0,
                 "name": "European Hare",
                 "score": [
@@ -2249,7 +3531,6 @@
                 "tree_type": "linden"
             },
             {
-                "count": 1,
                 "cost": 0,
                 "name": "Camberwell Beauty",
                 "score": [
@@ -2274,7 +3555,6 @@
                 "tree_type": "horse_chestnut"
             },
             {
-                "count": 1,
                 "cost": 2,
                 "name": "Chanterelle",
                 "side": "bottom",
@@ -2282,7 +3562,6 @@
                 "tree_type": "birch"
             },
             {
-                "count": 1,
                 "cost": 1,
                 "name": "Raccoon",
                 "side": "left",
@@ -2290,7 +3569,6 @@
                 "tree_type": "douglas_fir"
             },
             {
-                "count": 2,
                 "cost": 1,
                 "name": "Eurasian Jay",
                 "score": [
@@ -2304,7 +3582,19 @@
                 "tree_type": "birch"
             },
             {
-                "count": 1,
+                "cost": 1,
+                "name": "Eurasian Jay",
+                "score": [
+                    {
+                        "operator": "fixed",
+                        "operand": 3
+                    }
+                ],
+                "side": "top",
+                "species": "bird",
+                "tree_type": "birch"
+            },
+            {
                 "cost": 1,
                 "name": "Tree Ferns",
                 "score": [
@@ -2320,7 +3610,6 @@
                 "tree_type": "horse_chestnut"
             },
             {
-                "count": 1,
                 "cost": 1,
                 "name": "Beech Marten",
                 "score": [
@@ -2335,7 +3624,6 @@
                 "tree_type": "sycamore"
             },
             {
-                "count": 1,
                 "cost": 3,
                 "name": "Brown Bear",
                 "side": "right",
@@ -2343,7 +3631,6 @@
                 "tree_type": "horse_chestnut"
             },
             {
-                "count": 2,
                 "cost": 0,
                 "name": "Wild Strawberries",
                 "score": [
@@ -2358,7 +3645,20 @@
                 "tree_type": "sycamore"
             },
             {
-                "count": 1,
+                "cost": 0,
+                "name": "Wild Strawberries",
+                "score": [
+                    {
+                        "operator": "fixed",
+                        "operand": 10,
+                        "condition": "tree_max_species"
+                    }
+                ],
+                "side": "bottom",
+                "species": "plant",
+                "tree_type": "sycamore"
+            },
+            {
                 "cost": 0,
                 "name": "Blackberries",
                 "score": [
@@ -2374,7 +3674,6 @@
                 "tree_type": "silver_fir"
             },
             {
-                "count": 1,
                 "cost": 1,
                 "name": "Chaffinch",
                 "score": [
@@ -2390,7 +3689,6 @@
                 "tree_type": "birch"
             },
             {
-                "count": 2,
                 "cost": 1,
                 "name": "Wood Ant",
                 "score": [
@@ -2406,7 +3704,21 @@
                 "tree_type": "beech"
             },
             {
-                "count": 1,
+                "cost": 1,
+                "name": "Wood Ant",
+                "score": [
+                    {
+                        "operator": "multiplication",
+                        "operand": 2,
+                        "condition": "direction",
+                        "condition_target": "bottom"
+                    }
+                ],
+                "side": "bottom",
+                "species": "insect",
+                "tree_type": "beech"
+            },
+            {
                 "cost": 0,
                 "name": "Fireflies",
                 "score": [
@@ -2425,7 +3737,6 @@
                 "tree_type": "douglas_fir"
             },
             {
-                "count": 1,
                 "cost": 1,
                 "name": "Eurasian Jay",
                 "score": [
@@ -2439,7 +3750,6 @@
                 "tree_type": "horse_chestnut"
             },
             {
-                "count": 1,
                 "cost": 1,
                 "name": "Tree Ferns",
                 "score": [
@@ -2455,7 +3765,6 @@
                 "tree_type": "silver_fir"
             },
             {
-                "count": 1,
                 "cost": 0,
                 "name": "Red Squirrel",
                 "score": [
@@ -2471,7 +3780,6 @@
                 "tree_type": "horse_chestnut"
             },
             {
-                "count": 1,
                 "cost": 0,
                 "name": "Fireflies",
                 "score": [
@@ -2490,7 +3798,6 @@
                 "tree_type": "sycamore"
             },
             {
-                "count": 1,
                 "cost": 1,
                 "name": "Wood Ant",
                 "score": [
@@ -2506,7 +3813,6 @@
                 "tree_type": "birch"
             },
             {
-                "count": 1,
                 "cost": 1,
                 "name": "Great Spotted Woodpecker",
                 "score": [
@@ -2521,7 +3827,6 @@
                 "tree_type": "douglas_fir"
             },
             {
-                "count": 1,
                 "cost": 2,
                 "name": "Goshawk",
                 "score": [
@@ -2537,7 +3842,6 @@
                 "tree_type": "oak"
             },
             {
-                "count": 1,
                 "cost": 0,
                 "name": "Common Toad",
                 "score": [
@@ -2554,7 +3858,6 @@
                 "tree_type": "sycamore"
             },
             {
-                "count": 1,
                 "cost": 2,
                 "name": "Wild Boar",
                 "score": [
@@ -2571,7 +3874,6 @@
                 "tree_type": "douglas_fir"
             },
             {
-                "count": 1,
                 "cost": 2,
                 "name": "Tawny Owl",
                 "score": [
@@ -2585,7 +3887,6 @@
                 "tree_type": "birch"
             },
             {
-                "count": 1,
                 "cost": 0,
                 "name": "Large Tortoiseshell",
                 "score": [
@@ -2610,7 +3911,6 @@
                 "tree_type": "sycamore"
             },
             {
-                "count": 1,
                 "cost": 2,
                 "name": "Mole",
                 "side": "bottom",

@@ -4,6 +4,7 @@
 
 	<footer>
 		<button v-if="!forestView" @click="openForest">Next</button>
+		<p v-if="errorMessage">{{errorMessage}}</p>
 	</footer>
 </template>
 
@@ -22,7 +23,8 @@ export default {
 	data() {
 		return {
 			selectedPackIds: [],
-			forestView: false
+			forestView: false,
+			errorMessage: null
 		}
 	},
 	props: {
@@ -36,8 +38,13 @@ export default {
 			this.selectedPackIds = selectedPackIds
 		},
 		openForest () {
-			this.forestView = true
-			this.cardsStore.loadCards(this.selectedPackIds)
+			if (this.selectedPackIds.length < 1) {
+				this.errorMessage = 'Please select at least 1 pack'
+			} else {
+				this.errorMessage = null
+				this.forestView = true
+				this.cardsStore.loadCards(this.selectedPackIds)
+			}
 		}
 	},
 	mounted() {

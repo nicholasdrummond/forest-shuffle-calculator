@@ -14,8 +14,14 @@ export const useCardsStore = defineStore('cards', {
         availableCards () {
             return this.cards.filter(card => !card.playedBy)
         },
-        playedCards () {
-            return (playerId) => this.cards.filter(card => card.playedBy === playerId)
+        availableCardsByDirection () {
+            return (side) => this.cards.filter(card => !card.playedBy && card.side === side)
+        },
+        playedParentCards () {
+            return (playerId) => this.cards.filter(card => card.playedBy === playerId && !card.parentId)
+        },
+        playedChildCards () {
+            return (playerId, parentId) => this.cards.filter(card => card.playedBy === playerId && card.parentId === parentId)
         }
     },
     actions: {
@@ -30,7 +36,7 @@ export const useCardsStore = defineStore('cards', {
                     })
             })    
         },
-        playCard (cardId, playerId) {
+        playCardById (cardId, playerId) {
             var card = this.cards.find(card => card._id === cardId)
             if (card) {
                 if (!card.playedBy) {
@@ -42,7 +48,28 @@ export const useCardsStore = defineStore('cards', {
                 console.log(`Card with id ${cardId} could not be found`)
             }
         },
-        removeCard (cardId, playerId) {
+        playChildCardById (cardId, playerId, parentId) {
+            var card = this.cards.find(card => card._id === cardId)
+            if (card) {
+                if (!card.playedBy) {
+                    card.playedBy = playerId
+                    card.parentId = parentId
+                } else {
+                    console.log(`Card with id ${cardId} has already been played by ${playerId}`)
+                }
+            } else {
+                console.log(`Card with id ${cardId} could not be found`)
+            }
+        },
+        playCardByName (cardName, playerId) {
+            var cards = this.cards.filter(card => card.name === cardName && !card.playedBy)
+            if (cards) {
+                cards[0].playedBy = playerId
+            } else {
+                console.log(`Cards with name ${cardName} could not be found`)
+            }
+        },
+        removeCardById (cardId, playerId) {
             var card = this.cards.find(card => card._id === cardId)
             if (card) {
                 if (card.playedBy) {

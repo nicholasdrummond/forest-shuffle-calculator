@@ -7,14 +7,23 @@
 
 	<p>Played Cards</p>
 	<ul>
-		<li v-for="card in cardsStore.playedParentCards(playerId)">
+		<li v-for="card in cardsStore.playedTrees(playerId)">
 			{{card.name}}
-			<i class="fa fa-arrow-left" @click="toggleAddChildCard(card._id, 'left')"></i>
-			<i class="fa fa-arrow-up" @click="toggleAddChildCard(card._id, 'top')"></i>
-			<i class="fa fa-arrow-right" @click="toggleAddChildCard(card._id, 'right')"></i>
-			<i class="fa fa-arrow-down" @click="toggleAddChildCard(card._id, 'bottom')"></i>
+			<i v-if="cardsStore.canPlayCard(card._id, 'left')" class="fa fa-arrow-left" @click="toggleAddAttachable(card._id, 'left')"></i>
+			<i v-if="cardsStore.canPlayCard(card._id, 'top')" class="fa fa-arrow-up" @click="toggleAddAttachable(card._id, 'top')"></i>
+			<i v-if="cardsStore.canPlayCard(card._id, 'right')" class="fa fa-arrow-right" @click="toggleAddAttachable(card._id, 'right')"></i>
+			<i v-if="cardsStore.canPlayCard(card._id, 'bottom')" class="fa fa-arrow-down" @click="toggleAddAttachable(card._id, 'bottom')"></i>
 			<ul>
-				<li v-for="childCard in cardsStore.playedChildCards(playerId, card._id)">
+				<li v-for="childCard in cardsStore.playedAttachablesOnTreeSide(card._id, 'left')">
+					{{childCard.name}} on {{childCard.side}}
+				</li>
+				<li v-for="childCard in cardsStore.playedAttachablesOnTreeSide(card._id, 'top')">
+					{{childCard.name}} on {{childCard.side}}
+				</li>
+				<li v-for="childCard in cardsStore.playedAttachablesOnTreeSide(card._id, 'right')">
+					{{childCard.name}} on {{childCard.side}}
+				</li>
+				<li v-for="childCard in cardsStore.playedAttachablesOnTreeSide(card._id, 'bottom')">
 					{{childCard.name}} on {{childCard.side}}
 				</li>
 			</ul>
@@ -23,18 +32,18 @@
 
 	<div v-if="showTreePopup">
 		<ul>
-			<li v-for="tree in availableTrees">
+			<li v-for="tree in groupedTrees">
 				{{tree.count}}: {{tree.name}}
-				<i class="fa fa-plus" @click="addTree(tree.name)"></i>
+				<i class="fa fa-plus" @click="addTree(tree)"></i>
 			</li>
 		</ul>
 	</div>
 
 	<div v-if="targetCardId && direction">
 		<ul>
-			<li v-for="card in cardsStore.availableCardsByDirection(direction)">
+			<li v-for="card in cardsStore.availableAttachablesByDirection(targetCardId, direction)">
 				{{card.name}}
-				<i class="fa fa-plus" @click="addChildCard(card._id)"></i>
+				<i class="fa fa-plus" @click="addAttachable(card._id)"></i>
 			</li>
 		</ul>
 	</div>
@@ -59,13 +68,17 @@ export default {
 		}
     },
 	computed: {
-		availableTrees () {
-			let trees = this.cardsStore.availableCards.filter(card => card.species.includes('tree'))
-			const nameCountMap = trees.reduce((map, obj) => {
-				map.set(obj.name, (map.get(obj.name) || 0) + 1);
-				return map;
-			}, new Map());
-			return [...nameCountMap].map(([name, count]) => ({ name, count }));
+		groupedTrees () {
+			return Object.values(
+				this.cardsStore.availableTrees.reduce((acc, obj) => {
+					if (!acc[obj.name]) {
+						acc[obj.name] = { name: obj.name, count: 0, ids: [] };
+					}
+					acc[obj.name].count++;
+					acc[obj.name].ids.push(obj._id);
+					return acc;
+				}, {})
+			)
 		},
 		...mapStores(useCardsStore)
 	},
@@ -73,7 +86,7 @@ export default {
 		toggleAddTree () {
 			this.showTreePopup = !this.showTreePopup
 		},
-		toggleAddChildCard (cardId, direction) {
+		toggleAddAttachable (cardId, direction) {
 			// If the same option is clicked again, hide the menu
 			if (this.targetCardId === cardId && this.direction === direction) {
 				this.targetCardId = null
@@ -83,12 +96,12 @@ export default {
 				this.direction = direction
 			}
 		},
-		addTree (name) {
-			this.cardsStore.playCardByName(name, this.playerId)
+		addTree (tree) {
+			this.cardsStore.playTreeById(tree.ids.shift(), this.playerId)
 			this.showTreePopup = !this.showTreePopup
 		},
-		addChildCard (cardId) {
-			this.cardsStore.playChildCardById(cardId, this.playerId, this.targetCardId)
+		addAttachable (cardId) {
+			this.cardsStore.playAttachableById(cardId, this.playerId, this.targetCardId)
 			this.direction = ''
 			this.targetCardId = null
 		}

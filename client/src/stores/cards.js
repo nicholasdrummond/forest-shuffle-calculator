@@ -4,24 +4,48 @@ import axios from 'axios'
 export const useCardsStore = defineStore('cards', {
     state () {
         return {
-            cards: []
+            trees: [],
+            attachables: []
         }
     },
     getters: {
-        allCards () {
-            return this.cards
+        availableTrees () {
+            return this.trees.filter(card => !card.playedBy)
         },
-        availableCards () {
-            return this.cards.filter(card => !card.playedBy)
+        availableAttachablesByDirection () {
+            return (treeId, side) => {
+                let playedAttachables = this.playedAttachablesOnTreeSide(treeId, side)
+                if (!playedAttachables.length) {
+                    return this.attachables.filter(card => !card.playedBy && card.side === side)
+                }
+
+                let last = playedAttachables.find(card => !card.attachableChildId)
+                let score = last.score.find(card => card.condition === 'name_count')
+                if (score) {
+                    return this.attachables.filter(card => !card.playedBy && card.side === side && score.condition_target.includes(card.name))
+                }
+            }
         },
-        availableCardsByDirection () {
-            return (side) => this.cards.filter(card => !card.playedBy && card.side === side)
+        playedTrees () {
+            return (playerId) => this.trees.filter(card => card.playedBy === playerId)
         },
-        playedParentCards () {
-            return (playerId) => this.cards.filter(card => card.playedBy === playerId && !card.parentId)
+        playedAttachablesOnTreeSide () {
+            return (treeParentId, side) => this.attachables.filter(card => card.treeParentId === treeParentId && card.side === side)
         },
-        playedChildCards () {
-            return (playerId, parentId) => this.cards.filter(card => card.playedBy === playerId && card.parentId === parentId)
+        canPlayCard () {
+            return (treeId, side) => {
+                let playedAttachables = this.playedAttachablesOnTreeSide(treeId, side)
+                if (!playedAttachables.length) {
+                    return true
+                }
+
+                let last = playedAttachables.find(card => !card.attachableChildId)
+                let score = last.score.find(card => card.condition === 'name_count')
+                if (score && this.availableAttachablesByDirection(treeId, side).length) {
+                    return true
+                }
+                return false
+            }
         }
     },
     actions: {
@@ -29,48 +53,45 @@ export const useCardsStore = defineStore('cards', {
             packIds.forEach(id => {
                 axios.get(`http://localhost:3001/card/pack/${id}`)
                     .then((res) => {
-                        this.cards = this.cards.concat(res.data)
+                        this.trees = this.trees.concat(res.data.filter(card => card.species.includes('tree')))
+                        this.attachables = this.attachables.concat(res.data.filter(card => !card.species.includes('tree')))
                     })
                     .catch((err) => {
                         console.log(err)
                     })
             })    
         },
-        playCardById (cardId, playerId) {
-            var card = this.cards.find(card => card._id === cardId)
+        playTreeById (cardId, playerId) {
+            var card = this.trees.find(card => card._id === cardId)
             if (card) {
                 if (!card.playedBy) {
                     card.playedBy = playerId
                 } else {
-                    console.log(`Card with id ${cardId} has already been played by ${playerId}`)
+                    console.log(`Tree with id ${cardId} has already been played by ${playerId}`)
                 }
             } else {
-                console.log(`Card with id ${cardId} could not be found`)
+                console.log(`Tree with id ${cardId} could not be found`)
             }
         },
-        playChildCardById (cardId, playerId, parentId) {
-            var card = this.cards.find(card => card._id === cardId)
+        playAttachableById (cardId, playerId, treeParentId) {
+            var card = this.attachables.find(card => card._id === cardId)
+            var playedAttachables = this.playedAttachablesOnTreeSide(treeParentId, card.side)
+            let last = playedAttachables.find(card => !card.attachableChildId)
             if (card) {
                 if (!card.playedBy) {
                     card.playedBy = playerId
-                    card.parentId = parentId
+                    card.treeParentId = treeParentId
+                    if (last) last.attachableChildId = cardId
                 } else {
-                    console.log(`Card with id ${cardId} has already been played by ${playerId}`)
+                    console.log(`Attachable with id ${cardId} has already been played by ${playerId}`)
                 }
             } else {
-                console.log(`Card with id ${cardId} could not be found`)
-            }
-        },
-        playCardByName (cardName, playerId) {
-            var cards = this.cards.filter(card => card.name === cardName && !card.playedBy)
-            if (cards) {
-                cards[0].playedBy = playerId
-            } else {
-                console.log(`Cards with name ${cardName} could not be found`)
+                console.log(`Attachable with id ${cardId} could not be found`)
             }
         },
         removeCardById (cardId, playerId) {
-            var card = this.cards.find(card => card._id === cardId)
+            // Seperate methods for trees and attachables?
+            /*var card = this.cards.find(card => card._id === cardId)
             if (card) {
                 if (card.playedBy) {
                     card.playedBy = undefined
@@ -79,7 +100,7 @@ export const useCardsStore = defineStore('cards', {
                 }
             } else {
                 console.log(`Card with id ${cardId} could not be found`)
-            }
+            }*/
         }
     }
 })

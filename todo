@@ -9,3 +9,7 @@ scoring:
 implement bee scoring
 implement cave counter
 implement generic tree
+
+features todo:
+final scoring implementation
+css implementation

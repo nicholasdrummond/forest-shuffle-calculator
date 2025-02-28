@@ -82,7 +82,7 @@
             {
                 "cost": 0,
                 "name": "Red Squirrel",
-                "score": "trees.filter(c => c._id === self.treeParentId && c.name === 'Oak') ? 5 : 0",
+                "score": "trees.filter(c => c._id === self.treeId && c.name === 'Oak') ? 5 : 0",
                 "side": "top",
                 "species": "pawed_animal",
                 "tree_type": "douglas_fir"
@@ -90,7 +90,7 @@
             {
                 "cost": 0,
                 "name": "Common Toad",
-                "score": "attachables.filter(c => c.treeParentId === self.treeParentId && c.side === self.side && c.name === 'Common Toad').length === 2 ? 5 : 0",
+                "score": "attachables.filter(c => c.treeId === self.treeId && c.side === self.side && c.name === 'Common Toad').length === 2 ? 5 : 0",
                 "side": "bottom",
                 "species": "amphibian",
                 "tree_type": "horse_chestnut",
@@ -309,7 +309,7 @@
             {
                 "cost": 1,
                 "name": "Greater Horse-shoe Bat",
-                "score": "trees.filter(t => new Set(attachables.filter(a => a.treeParentId === t.id && a.species.includes('bat')).map(a => a.name)).size >= 3).length >= 1 ? 5 : 0",
+                "score": "trees.filter(t => new Set(attachables.filter(a => a.treeId === t.id && a.species.includes('bat')).map(a => a.name)).size >= 3).length >= 1 ? 5 : 0",
                 "side": "right",
                 "species": "bat",
                 "tree_type": "linden"
@@ -317,7 +317,7 @@
             {
                 "cost": 1,
                 "name": "Greater Horse-shoe Bat",
-                "score": "trees.filter(t => new Set(attachables.filter(a => a.treeParentId === t.id && a.species.includes('bat')).map(a => a.name)).size >= 3).length >= 1 ? 5 : 0",
+                "score": "trees.filter(t => new Set(attachables.filter(a => a.treeId === t.id && a.species.includes('bat')).map(a => a.name)).size >= 3).length >= 1 ? 5 : 0",
                 "side": "right",
                 "species": "bat",
                 "tree_type": "linden"
@@ -353,7 +353,7 @@
             {
                 "cost": 1,
                 "name": "Linden",
-                "score": "trees.filter(t => t.name === 'Linden').length > Math.max(...Object.values(allTrees.reduce((acc, t) => (acc[t.playerId] = (acc[t.playerId] || 0) + (t.name === 'Linden'), acc), {}))) ? 3 : 1",
+                "score": "Object.values(allTrees.reduce((acc, t) => (t.playedBy !== self.playedBy ? acc[t.playedBy] = (acc[t.playedBy] || 0) + (t.name === 'Linden') : '', acc), {})).every(count => (trees.reduce((acc, t) => (acc[t.playedBy] = (acc[t.playedBy] || 0) + (t.name === 'Linden'), acc), {})[self.playedBy] || 0) > count) ? 3 : 1",
                 "side": "center",
                 "species": "tree",
                 "tree_type": "linden"
@@ -361,7 +361,7 @@
             {
                 "cost": 1,
                 "name": "Linden",
-                "score": "trees.filter(t => t.name === 'Linden').length > Math.max(...Object.values(allTrees.reduce((acc, t) => (acc[t.playerId] = (acc[t.playerId] || 0) + (t.name === 'Linden'), acc), {}))) ? 3 : 1",
+                "score": "Object.values(allTrees.reduce((acc, t) => (t.playedBy !== self.playedBy ? acc[t.playedBy] = (acc[t.playedBy] || 0) + (t.name === 'Linden') : '', acc), {})).every(count => (trees.reduce((acc, t) => (acc[t.playedBy] = (acc[t.playedBy] || 0) + (t.name === 'Linden'), acc), {})[self.playedBy] || 0) > count) ? 3 : 1",
                 "side": "center",
                 "species": "tree",
                 "tree_type": "linden"
@@ -369,7 +369,7 @@
             {
                 "cost": 1,
                 "name": "Linden",
-                "score": "trees.filter(t => t.name === 'Linden').length > Math.max(...Object.values(allTrees.reduce((acc, t) => (acc[t.playerId] = (acc[t.playerId] || 0) + (t.name === 'Linden'), acc), {}))) ? 3 : 1",
+                "score": "Object.values(allTrees.reduce((acc, t) => (t.playedBy !== self.playedBy ? acc[t.playedBy] = (acc[t.playedBy] || 0) + (t.name === 'Linden') : '', acc), {})).every(count => (trees.reduce((acc, t) => (acc[t.playedBy] = (acc[t.playedBy] || 0) + (t.name === 'Linden'), acc), {})[self.playedBy] || 0) > count) ? 3 : 1",
                 "side": "center",
                 "species": "tree",
                 "tree_type": "linden"
@@ -377,7 +377,7 @@
             {
                 "cost": 1,
                 "name": "Linden",
-                "score": "trees.filter(t => t.name === 'Linden').length > Math.max(...Object.values(allTrees.reduce((acc, t) => (acc[t.playerId] = (acc[t.playerId] || 0) + (t.name === 'Linden'), acc), {}))) ? 3 : 1",
+                "score": "Object.values(allTrees.reduce((acc, t) => (t.playedBy !== self.playedBy ? acc[t.playedBy] = (acc[t.playedBy] || 0) + (t.name === 'Linden') : '', acc), {})).every(count => (trees.reduce((acc, t) => (acc[t.playedBy] = (acc[t.playedBy] || 0) + (t.name === 'Linden'), acc), {})[self.playedBy] || 0) > count) ? 3 : 1",
                 "side": "center",
                 "species": "tree",
                 "tree_type": "linden"
@@ -385,7 +385,7 @@
             {
                 "cost": 1,
                 "name": "Linden",
-                "score": "trees.filter(t => t.name === 'Linden').length > Math.max(...Object.values(allTrees.reduce((acc, t) => (acc[t.playerId] = (acc[t.playerId] || 0) + (t.name === 'Linden'), acc), {}))) ? 3 : 1",
+                "score": "Object.values(allTrees.reduce((acc, t) => (t.playedBy !== self.playedBy ? acc[t.playedBy] = (acc[t.playedBy] || 0) + (t.name === 'Linden') : '', acc), {})).every(count => (trees.reduce((acc, t) => (acc[t.playedBy] = (acc[t.playedBy] || 0) + (t.name === 'Linden'), acc), {})[self.playedBy] || 0) > count) ? 3 : 1",
                 "side": "center",
                 "species": "tree",
                 "tree_type": "linden"
@@ -393,7 +393,7 @@
             {
                 "cost": 1,
                 "name": "Linden",
-                "score": "trees.filter(t => t.name === 'Linden').length > Math.max(...Object.values(allTrees.reduce((acc, t) => (acc[t.playerId] = (acc[t.playerId] || 0) + (t.name === 'Linden'), acc), {}))) ? 3 : 1",
+                "score": "Object.values(allTrees.reduce((acc, t) => (t.playedBy !== self.playedBy ? acc[t.playedBy] = (acc[t.playedBy] || 0) + (t.name === 'Linden') : '', acc), {})).every(count => (trees.reduce((acc, t) => (acc[t.playedBy] = (acc[t.playedBy] || 0) + (t.name === 'Linden'), acc), {})[self.playedBy] || 0) > count) ? 3 : 1",
                 "side": "center",
                 "species": "tree",
                 "tree_type": "linden"
@@ -401,7 +401,7 @@
             {
                 "cost": 1,
                 "name": "Linden",
-                "score": "trees.filter(t => t.name === 'Linden').length > Math.max(...Object.values(allTrees.reduce((acc, t) => (acc[t.playerId] = (acc[t.playerId] || 0) + (t.name === 'Linden'), acc), {}))) ? 3 : 1",
+                "score": "Object.values(allTrees.reduce((acc, t) => (t.playedBy !== self.playedBy ? acc[t.playedBy] = (acc[t.playedBy] || 0) + (t.name === 'Linden') : '', acc), {})).every(count => (trees.reduce((acc, t) => (acc[t.playedBy] = (acc[t.playedBy] || 0) + (t.name === 'Linden'), acc), {})[self.playedBy] || 0) > count) ? 3 : 1",
                 "side": "center",
                 "species": "tree",
                 "tree_type": "linden"
@@ -409,7 +409,7 @@
             {
                 "cost": 1,
                 "name": "Linden",
-                "score": "trees.filter(t => t.name === 'Linden').length > Math.max(...Object.values(allTrees.reduce((acc, t) => (acc[t.playerId] = (acc[t.playerId] || 0) + (t.name === 'Linden'), acc), {}))) ? 3 : 1",
+                "score": "Object.values(allTrees.reduce((acc, t) => (t.playedBy !== self.playedBy ? acc[t.playedBy] = (acc[t.playedBy] || 0) + (t.name === 'Linden') : '', acc), {})).every(count => (trees.reduce((acc, t) => (acc[t.playedBy] = (acc[t.playedBy] || 0) + (t.name === 'Linden'), acc), {})[self.playedBy] || 0) > count) ? 3 : 1",
                 "side": "center",
                 "species": "tree",
                 "tree_type": "linden"
@@ -417,7 +417,7 @@
             {
                 "cost": 1,
                 "name": "Linden",
-                "score": "trees.filter(t => t.name === 'Linden').length > Math.max(...Object.values(allTrees.reduce((acc, t) => (acc[t.playerId] = (acc[t.playerId] || 0) + (t.name === 'Linden'), acc), {}))) ? 3 : 1",
+                "score": "Object.values(allTrees.reduce((acc, t) => (t.playedBy !== self.playedBy ? acc[t.playedBy] = (acc[t.playedBy] || 0) + (t.name === 'Linden') : '', acc), {})).every(count => (trees.reduce((acc, t) => (acc[t.playedBy] = (acc[t.playedBy] || 0) + (t.name === 'Linden'), acc), {})[self.playedBy] || 0) > count) ? 3 : 1",
                 "side": "center",
                 "species": "tree",
                 "tree_type": "linden"
@@ -458,7 +458,7 @@
             {
                 "cost": 1,
                 "name": "Barbastelle Bat",
-                "score": "trees.filter(t => new Set(attachables.filter(a => a.treeParentId === t.id && a.species.includes('bat')).map(a => a.name)).size >= 3).length >= 1 ? 5 : 0",
+                "score": "trees.filter(t => new Set(attachables.filter(a => a.treeId === t.id && a.species.includes('bat')).map(a => a.name)).size >= 3).length >= 1 ? 5 : 0",
                 "side": "left",
                 "species": "bat",
                 "tree_type": "horse_chestnut"
@@ -605,7 +605,7 @@
             {
                 "cost": 1,
                 "name": "Bechstein's Bat",
-                "score": "trees.filter(t => new Set(attachables.filter(a => a.treeParentId === t.id && a.species.includes('bat')).map(a => a.name)).size >= 3).length >= 1 ? 5 : 0",
+                "score": "trees.filter(t => new Set(attachables.filter(a => a.treeId === t.id && a.species.includes('bat')).map(a => a.name)).size >= 3).length >= 1 ? 5 : 0",
                 "side": "left",
                 "species": "bat",
                 "tree_type": "oak"
@@ -613,7 +613,7 @@
             {
                 "cost": 1,
                 "name": "Chaffinch",
-                "score": "trees.filter(c => c._id === self.treeParentId && c.name === 'Beech') ? 5 : 0",
+                "score": "trees.filter(c => c._id === self.treeId && c.name === 'Beech') ? 5 : 0",
                 "side": "top",
                 "species": "bird",
                 "tree_type": "beech"
@@ -621,7 +621,7 @@
             {
                 "cost": 0,
                 "name": "Common Toad",
-                "score": "attachables.filter(c => c.treeParentId === self.treeParentId && c.side === self.side && c.name === 'Common Toad').length === 2 ? 5 : 0",
+                "score": "attachables.filter(c => c.treeId === self.treeId && c.side === self.side && c.name === 'Common Toad').length === 2 ? 5 : 0",
                 "side": "bottom",
                 "species": "amphibian",
                 "tree_type": "silver_fir",
@@ -630,7 +630,7 @@
             {
                 "cost": 1,
                 "name": "Brown Long-Eared Bat",
-                "score": "trees.filter(t => new Set(attachables.filter(a => a.treeParentId === t.id && a.species.includes('bat')).map(a => a.name)).size >= 3).length >= 1 ? 5 : 0",
+                "score": "trees.filter(t => new Set(attachables.filter(a => a.treeId === t.id && a.species.includes('bat')).map(a => a.name)).size >= 3).length >= 1 ? 5 : 0",
                 "side": "left",
                 "species": "bat",
                 "tree_type": "sycamore"
@@ -638,7 +638,7 @@
             {
                 "cost": 1,
                 "name": "Brown Long-Eared Bat",
-                "score": "trees.filter(t => new Set(attachables.filter(a => a.treeParentId === t.id && a.species.includes('bat')).map(a => a.name)).size >= 3).length >= 1 ? 5 : 0",
+                "score": "trees.filter(t => new Set(attachables.filter(a => a.treeId === t.id && a.species.includes('bat')).map(a => a.name)).size >= 3).length >= 1 ? 5 : 0",
                 "side": "left",
                 "species": "bat",
                 "tree_type": "sycamore"
@@ -707,7 +707,7 @@
             {
                 "cost": 0,
                 "name": "Common Toad",
-                "score": "attachables.filter(c => c.treeParentId === self.treeParentId && c.side === self.side && c.name === 'Common Toad').length === 2 ? 5 : 0",
+                "score": "attachables.filter(c => c.treeId === self.treeId && c.side === self.side && c.name === 'Common Toad').length === 2 ? 5 : 0",
                 "side": "bottom",
                 "species": "amphibian",
                 "tree_type": "beech",
@@ -733,7 +733,7 @@
             {
                 "cost": 1,
                 "name": "Beech Marten",
-                "score": "trees.filter(t => ['top', 'bottom', 'left', 'right'].every(side => attachables.some(a => a.treeParentId === t.id && a.side === side))).length",
+                "score": "trees.filter(t => ['top', 'bottom', 'left', 'right'].every(side => attachables.some(a => a.treeId === t.id && a.side === side))).length",
                 "side": "right",
                 "species": "pawed_animal",
                 "tree_type": "oak"
@@ -741,7 +741,7 @@
             {
                 "cost": 1,
                 "name": "Barbastelle Bat",
-                "score": "trees.filter(t => new Set(attachables.filter(a => a.treeParentId === t.id && a.species.includes('bat')).map(a => a.name)).size >= 3).length >= 1 ? 5 : 0",
+                "score": "trees.filter(t => new Set(attachables.filter(a => a.treeId === t.id && a.species.includes('bat')).map(a => a.name)).size >= 3).length >= 1 ? 5 : 0",
                 "side": "right",
                 "species": "bat",
                 "tree_type": "oak"
@@ -749,7 +749,7 @@
             {
                 "cost": 1,
                 "name": "European Fat Dormouse",
-                "score": "attachables.some(a => a.treeParentId === self.treeParentId && a.species.includes('bat')) ? 15 : 0",
+                "score": "attachables.some(a => a.treeId === self.treeId && a.species.includes('bat')) ? 15 : 0",
                 "side": "left",
                 "species": "pawed_animal",
                 "tree_type": "beech"
@@ -757,7 +757,7 @@
             {
                 "cost": 1,
                 "name": "European Fat Dormouse",
-                "score": "attachables.some(a => a.treeParentId === self.treeParentId && a.species.includes('bat')) ? 15 : 0",
+                "score": "attachables.some(a => a.treeId === self.treeId && a.species.includes('bat')) ? 15 : 0",
                 "side": "left",
                 "species": "pawed_animal",
                 "tree_type": "silver_fir"
@@ -765,7 +765,7 @@
             {
                 "cost": 1,
                 "name": "Brown Long-Eared Bat",
-                "score": "trees.filter(t => new Set(attachables.filter(a => a.treeParentId === t.id && a.species.includes('bat')).map(a => a.name)).size >= 3).length >= 1 ? 5 : 0",
+                "score": "trees.filter(t => new Set(attachables.filter(a => a.treeId === t.id && a.species.includes('bat')).map(a => a.name)).size >= 3).length >= 1 ? 5 : 0",
                 "side": "right",
                 "species": "bat",
                 "tree_type": "beech"
@@ -788,7 +788,7 @@
             {
                 "cost": 2,
                 "name": "Silver Fir",
-                "score": "2 * attachables.filter(c => c.treeParentId === self._id).length",
+                "score": "2 * attachables.filter(c => c.treeId === self._id).length",
                 "side": "center",
                 "species": "tree",
                 "tree_type": "silver_fir"
@@ -796,7 +796,7 @@
             {
                 "cost": 2,
                 "name": "Silver Fir",
-                "score": "2 * attachables.filter(c => c.treeParentId === self._id).length",
+                "score": "2 * attachables.filter(c => c.treeId === self._id).length",
                 "side": "center",
                 "species": "tree",
                 "tree_type": "silver_fir"
@@ -804,7 +804,7 @@
             {
                 "cost": 2,
                 "name": "Silver Fir",
-                "score": "2 * attachables.filter(c => c.treeParentId === self._id).length",
+                "score": "2 * attachables.filter(c => c.treeId === self._id).length",
                 "side": "center",
                 "species": "tree",
                 "tree_type": "silver_fir"
@@ -812,7 +812,7 @@
             {
                 "cost": 2,
                 "name": "Silver Fir",
-                "score": "2 * attachables.filter(c => c.treeParentId === self._id).length",
+                "score": "2 * attachables.filter(c => c.treeId === self._id).length",
                 "side": "center",
                 "species": "tree",
                 "tree_type": "silver_fir"
@@ -820,7 +820,7 @@
             {
                 "cost": 2,
                 "name": "Silver Fir",
-                "score": "2 * attachables.filter(c => c.treeParentId === self._id).length",
+                "score": "2 * attachables.filter(c => c.treeId === self._id).length",
                 "side": "center",
                 "species": "tree",
                 "tree_type": "silver_fir"
@@ -828,7 +828,7 @@
             {
                 "cost": 2,
                 "name": "Silver Fir",
-                "score": "2 * attachables.filter(c => c.treeParentId === self._id).length",
+                "score": "2 * attachables.filter(c => c.treeId === self._id).length",
                 "side": "center",
                 "species": "tree",
                 "tree_type": "silver_fir"
@@ -836,7 +836,7 @@
             {
                 "cost": 1,
                 "name": "Greater Horse-shoe Bat",
-                "score": "trees.filter(t => new Set(attachables.filter(a => a.treeParentId === t.id && a.species.includes('bat')).map(a => a.name)).size >= 3).length >= 1 ? 5 : 0",
+                "score": "trees.filter(t => new Set(attachables.filter(a => a.treeId === t.id && a.species.includes('bat')).map(a => a.name)).size >= 3).length >= 1 ? 5 : 0",
                 "side": "left",
                 "species": "bat",
                 "tree_type": "beech"
@@ -844,7 +844,7 @@
             {
                 "cost": 1,
                 "name": "European Fat Dormouse",
-                "score": "attachables.some(a => a.treeParentId === self.treeParentId && a.species.includes('bat')) ? 15 : 0",
+                "score": "attachables.some(a => a.treeId === self.treeId && a.species.includes('bat')) ? 15 : 0",
                 "side": "right",
                 "species": "pawed_animal",
                 "tree_type": "douglas_fir"
@@ -1084,7 +1084,7 @@
             {
                 "cost": 1,
                 "name": "Bechstein's Bat",
-                "score": "trees.filter(t => new Set(attachables.filter(a => a.treeParentId === t.id && a.species.includes('bat')).map(a => a.name)).size >= 3).length >= 1 ? 5 : 0",
+                "score": "trees.filter(t => new Set(attachables.filter(a => a.treeId === t.id && a.species.includes('bat')).map(a => a.name)).size >= 3).length >= 1 ? 5 : 0",
                 "side": "left",
                 "species": "bat",
                 "tree_type": "beech"
@@ -1092,7 +1092,7 @@
             {
                 "cost": 1,
                 "name": "European Fat Dormouse",
-                "score": "attachables.some(a => a.treeParentId === self.treeParentId && a.species.includes('bat')) ? 15 : 0",
+                "score": "attachables.some(a => a.treeId === self.treeId && a.species.includes('bat')) ? 15 : 0",
                 "side": "right",
                 "species": "pawed_animal",
                 "tree_type": "oak"
@@ -1210,7 +1210,7 @@
             {
                 "cost": 1,
                 "name": "Chaffinch",
-                "score": "trees.filter(c => c._id === self.treeParentId && c.name === 'Beech') ? 5 : 0",
+                "score": "trees.filter(c => c._id === self.treeId && c.name === 'Beech') ? 5 : 0",
                 "side": "top",
                 "species": "bird",
                 "tree_type": "sycamore"
@@ -1218,7 +1218,7 @@
             {
                 "cost": 1,
                 "name": "Chaffinch",
-                "score": "trees.filter(c => c._id === self.treeParentId && c.name === 'Beech') ? 5 : 0",
+                "score": "trees.filter(c => c._id === self.treeId && c.name === 'Beech') ? 5 : 0",
                 "side": "top",
                 "species": "bird",
                 "tree_type": "sycamore"
@@ -1279,7 +1279,7 @@
             {
                 "cost": 0,
                 "name": "Common Toad",
-                "score": "attachables.filter(c => c.treeParentId === self.treeParentId && c.side === self.side && c.name === 'Common Toad').length === 2 ? 5 : 0",
+                "score": "attachables.filter(c => c.treeId === self.treeId && c.side === self.side && c.name === 'Common Toad').length === 2 ? 5 : 0",
                 "side": "bottom",
                 "species": "amphibian",
                 "tree_type": "douglas_fir",
@@ -1406,7 +1406,7 @@
             {
                 "cost": 1,
                 "name": "Barbastelle Bat",
-                "score": "trees.filter(t => new Set(attachables.filter(a => a.treeParentId === t.id && a.species.includes('bat')).map(a => a.name)).size >= 3).length >= 1 ? 5 : 0",
+                "score": "trees.filter(t => new Set(attachables.filter(a => a.treeId === t.id && a.species.includes('bat')).map(a => a.name)).size >= 3).length >= 1 ? 5 : 0",
                 "side": "left",
                 "species": "bat",
                 "tree_type": "silver_fir"
@@ -1414,7 +1414,7 @@
             {
                 "cost": 1,
                 "name": "Beech Marten",
-                "score": "trees.filter(t => ['top', 'bottom', 'left', 'right'].every(side => attachables.some(a => a.treeParentId === t.id && a.side === side))).length",
+                "score": "trees.filter(t => ['top', 'bottom', 'left', 'right'].every(side => attachables.some(a => a.treeId === t.id && a.side === side))).length",
                 "side": "right",
                 "species": "pawed_animal",
                 "tree_type": "horse_chestnut"
@@ -1422,7 +1422,7 @@
             {
                 "cost": 1,
                 "name": "Beech Marten",
-                "score": "trees.filter(t => ['top', 'bottom', 'left', 'right'].every(side => attachables.some(a => a.treeParentId === t.id && a.side === side))).length",
+                "score": "trees.filter(t => ['top', 'bottom', 'left', 'right'].every(side => attachables.some(a => a.treeId === t.id && a.side === side))).length",
                 "side": "right",
                 "species": "pawed_animal",
                 "tree_type": "horse_chestnut"
@@ -1430,7 +1430,7 @@
             {
                 "cost": 1,
                 "name": "Beech Marten",
-                "score": "trees.filter(t => ['top', 'bottom', 'left', 'right'].every(side => attachables.some(a => a.treeParentId === t.id && a.side === side))).length",
+                "score": "trees.filter(t => ['top', 'bottom', 'left', 'right'].every(side => attachables.some(a => a.treeId === t.id && a.side === side))).length",
                 "side": "left",
                 "species": "pawed_animal",
                 "tree_type": "beech"
@@ -1438,7 +1438,7 @@
             {
                 "cost": 1,
                 "name": "Bechstein's Bat",
-                "score": "trees.filter(t => new Set(attachables.filter(a => a.treeParentId === t.id && a.species.includes('bat')).map(a => a.name)).size >= 3).length >= 1 ? 5 : 0",
+                "score": "trees.filter(t => new Set(attachables.filter(a => a.treeId === t.id && a.species.includes('bat')).map(a => a.name)).size >= 3).length >= 1 ? 5 : 0",
                 "side": "right",
                 "species": "bat",
                 "tree_type": "birch"
@@ -1458,7 +1458,7 @@
             {
                 "cost": 1,
                 "name": "Great Spotted Woodpecker",
-                "score": "trees.filter(t => t.playedBy === self.playedBy).length > Math.max(...Object.values(allTrees.reduce((acc, t) => (acc[t.playerId] = (acc[t.playerId] || 0) + 1, acc), {}))) ? 10 : 0",
+                "score": "Object.values(trees.reduce((acc, t) => (t.playedBy !== self.playedBy ? acc[t.playedBy] = (acc[t.playedBy] || 0) + 1 : '', acc), {})).every(count => (trees.reduce((acc, t) => (acc[t.playedBy] = (acc[t.playedBy] || 0) + 1, acc), {})[self.playedBy] || 0) > count) ? 10 : 0",
                 "side": "top",
                 "species": "bird",
                 "tree_type": "linden"
@@ -1466,7 +1466,7 @@
             {
                 "cost": 1,
                 "name": "Great Spotted Woodpecker",
-                "score": "trees.filter(t => t.playedBy === self.playedBy).length > Math.max(...Object.values(allTrees.reduce((acc, t) => (acc[t.playerId] = (acc[t.playerId] || 0) + 1, acc), {}))) ? 10 : 0",
+                "score": "Object.values(trees.reduce((acc, t) => (t.playedBy !== self.playedBy ? acc[t.playedBy] = (acc[t.playedBy] || 0) + 1 : '', acc), {})).every(count => (trees.reduce((acc, t) => (acc[t.playedBy] = (acc[t.playedBy] || 0) + 1, acc), {})[self.playedBy] || 0) > count) ? 10 : 0",
                 "side": "top",
                 "species": "bird",
                 "tree_type": "linden"
@@ -1474,7 +1474,7 @@
             {
                 "cost": 1,
                 "name": "Great Spotted Woodpecker",
-                "score": "trees.filter(t => t.playedBy === self.playedBy).length > Math.max(...Object.values(allTrees.reduce((acc, t) => (acc[t.playerId] = (acc[t.playerId] || 0) + 1, acc), {}))) ? 10 : 0",
+                "score": "Object.values(trees.reduce((acc, t) => (t.playedBy !== self.playedBy ? acc[t.playedBy] = (acc[t.playedBy] || 0) + 1 : '', acc), {})).every(count => (trees.reduce((acc, t) => (acc[t.playedBy] = (acc[t.playedBy] || 0) + 1, acc), {})[self.playedBy] || 0) > count) ? 10 : 0",
                 "side": "top",
                 "species": "bird",
                 "tree_type": "linden"
@@ -1681,7 +1681,7 @@
             {
                 "cost": 0,
                 "name": "Red Squirrel",
-                "score": "trees.filter(c => c._id === self.treeParentId && c.name === 'Oak') ? 5 : 0",
+                "score": "trees.filter(c => c._id === self.treeId && c.name === 'Oak') ? 5 : 0",
                 "side": "top",
                 "species": "pawed_animal",
                 "tree_type": "oak"
@@ -1697,7 +1697,7 @@
             {
                 "cost": 0,
                 "name": "Common Toad",
-                "score": "attachables.filter(c => c.treeParentId === self.treeParentId && c.side === self.side && c.name === 'Common Toad').length === 2 ? 5 : 0",
+                "score": "attachables.filter(c => c.treeId === self.treeId && c.side === self.side && c.name === 'Common Toad').length === 2 ? 5 : 0",
                 "side": "bottom",
                 "species": "amphibian",
                 "tree_type": "oak",
@@ -1809,7 +1809,7 @@
             {
                 "cost": 0,
                 "name": "Red Squirrel",
-                "score": "trees.filter(c => c._id === self.treeParentId && c.name === 'Oak') ? 5 : 0",
+                "score": "trees.filter(c => c._id === self.treeId && c.name === 'Oak') ? 5 : 0",
                 "side": "top",
                 "species": "pawed_animal",
                 "tree_type": "beech"
@@ -1968,7 +1968,7 @@
             {
                 "cost": 1,
                 "name": "Beech Marten",
-                "score": "trees.filter(t => ['top', 'bottom', 'left', 'right'].every(side => attachables.some(a => a.treeParentId === t.id && a.side === side))).length",
+                "score": "trees.filter(t => ['top', 'bottom', 'left', 'right'].every(side => attachables.some(a => a.treeId === t.id && a.side === side))).length",
                 "side": "left",
                 "species": "pawed_animal",
                 "tree_type": "sycamore"
@@ -2007,7 +2007,7 @@
             {
                 "cost": 1,
                 "name": "Chaffinch",
-                "score": "trees.filter(c => c._id === self.treeParentId && c.name === 'Beech') ? 5 : 0",
+                "score": "trees.filter(c => c._id === self.treeId && c.name === 'Beech') ? 5 : 0",
                 "side": "top",
                 "species": "bird",
                 "tree_type": "birch"
@@ -2056,7 +2056,7 @@
             {
                 "cost": 0,
                 "name": "Red Squirrel",
-                "score": "trees.filter(c => c._id === self.treeParentId && c.name === 'Oak') ? 5 : 0",
+                "score": "trees.filter(c => c._id === self.treeId && c.name === 'Oak') ? 5 : 0",
                 "side": "top",
                 "species": "pawed_animal",
                 "tree_type": "horse_chestnut"
@@ -2081,7 +2081,7 @@
             {
                 "cost": 1,
                 "name": "Great Spotted Woodpecker",
-                "score": "trees.filter(t => t.playedBy === self.playedBy).length > Math.max(...Object.values(allTrees.reduce((acc, t) => (acc[t.playerId] = (acc[t.playerId] || 0) + 1, acc), {}))) ? 10 : 0",
+                "score": "Object.values(trees.reduce((acc, t) => (t.playedBy !== self.playedBy ? acc[t.playedBy] = (acc[t.playedBy] || 0) + 1 : '', acc), {})).every(count => (trees.reduce((acc, t) => (acc[t.playedBy] = (acc[t.playedBy] || 0) + 1, acc), {})[self.playedBy] || 0) > count) ? 10 : 0",
                 "side": "top",
                 "species": "bird",
                 "tree_type": "douglas_fir"
@@ -2097,7 +2097,7 @@
             {
                 "cost": 0,
                 "name": "Common Toad",
-                "score": "attachables.filter(c => c.treeParentId === self.treeParentId && c.side === self.side && c.name === 'Common Toad').length === 2 ? 5 : 0",
+                "score": "attachables.filter(c => c.treeId === self.treeId && c.side === self.side && c.name === 'Common Toad').length === 2 ? 5 : 0",
                 "side": "bottom",
                 "species": "amphibian",
                 "tree_type": "sycamore",

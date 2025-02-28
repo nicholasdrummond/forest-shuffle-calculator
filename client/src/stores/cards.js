@@ -44,6 +44,9 @@ export const useCardsStore = defineStore('cards', {
         allPlayedCards () {
             return this.allPlayedTrees.concat(this.allPlayedAttachables)
         },
+        playedAttachablesOnTree () {
+            return (treeId) => this.attachables.filter(card => card.treeId === treeId)
+        },
         playedAttachablesOnTreeSide () {
             return (treeId, side) => this.attachables.filter(card => card.treeId === treeId && card.side === side)
         },
@@ -104,13 +107,10 @@ export const useCardsStore = defineStore('cards', {
         },
         playAttachableById (cardId, playerId, treeId) {
             var card = this.attachables.find(card => card._id === cardId)
-            var playedAttachables = this.playedAttachablesOnTreeSide(treeId, card.side)
-            let last = playedAttachables.find(card => !card.attachableChildId)
             if (card) {
                 if (!card.playedBy) {
                     card.playedBy = playerId
                     card.treeId = treeId
-                    if (last) last.attachableChildId = cardId
                 } else {
                     console.log(`Attachable with id ${cardId} has already been played by ${playerId}`)
                 }
@@ -118,18 +118,36 @@ export const useCardsStore = defineStore('cards', {
                 console.log(`Attachable with id ${cardId} could not be found`)
             }
         },
-        removeCardById (cardId, playerId) {
-            // Seperate methods for trees and attachables?
-            /*var card = this.cards.find(card => card._id === cardId)
+        removeCardByCardId (cardId) {
+            var card = this.allPlayedCards.find(card => card._id === cardId)
             if (card) {
                 if (card.playedBy) {
-                    card.playedBy = undefined
+                    delete card.playedBy
+                    delete card.treeId
+                    this.attachables.filter(c => c.treeId === card._id).forEach(c => {
+                        if (c.playedBy) {
+                            delete c.playedBy
+                            delete c.treeId
+                        } else {
+                            console.log(`Card with id ${c._id} is already not in play`)
+                        }
+                    })
                 } else {
-                    console.log(`Card with id ${cardId} is already not in play by ${playerId}`)
+                    console.log(`Card with id ${cardId} is already not in play`)
                 }
             } else {
                 console.log(`Card with id ${cardId} could not be found`)
-            }*/
+            }
+        },
+        removeCardsByPlayerId (playerId) {
+            this.playedCards(playerId).forEach(card => {
+                if (card.playedBy) {
+                    delete card.playedBy
+                    delete card.treeId
+                } else {
+                    console.log(`Card with id ${card._id} is already not in play`)
+                }
+            })
         }
     }
 })

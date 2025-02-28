@@ -1,10 +1,14 @@
 <template>
 	<p>Forest Builder</p>
-    <p>Player Count {{players}}</p>
-	<Forest :player-id="1"></Forest>
+    <p>Player Count {{playerIds.length}}</p><i class="fa fa-plus" @click="addPlayer"></i><br/>
+	<div v-for="id in playerIds" style="display: inline-block; margin: 10px">
+		<i v-if="id !== initialPlayer" class="fa fa-minus" @click="removePlayer(id)"></i>
+		<Forest :player-id="id"></Forest>
+	</div>
 </template>
 
 <script>
+import { v4 as uuid } from 'uuid';
 import { useCardsStore } from '@/stores/cards';
 import { mapStores } from 'pinia';
 import Forest from './Forest.vue';
@@ -15,7 +19,8 @@ export default {
 	},
 	data() {
 		return {
-			players: 1,
+			initialPlayer: uuid(),
+			playerIds: [],
 		}
 	},
     props: {
@@ -25,10 +30,20 @@ export default {
 		...mapStores(useCardsStore)
 	},
 	methods: {
-
+		addPlayer () {
+			this.playerIds.push(uuid())
+		},
+		removePlayer (id) {
+			if (id !== this.initialPlayer) {
+				this.playerIds.splice(this.playerIds.indexOf(id), 1)
+				this.cardsStore.removeCardsByPlayerId(id)
+			} else {
+				console.log('Cannot remove initial player.')
+			}
+		}
 	},
 	mounted() {
-        
+        this.playerIds.push(this.initialPlayer)
 	}
 }
 </script>

@@ -14,18 +14,10 @@
 			<i v-if="cardsStore.availableAttachablesByDirection(card._id, 'top').length" class="fa fa-arrow-up" @click="toggleAddAttachable(card._id, 'top')"></i>
 			<i v-if="cardsStore.availableAttachablesByDirection(card._id, 'right').length" class="fa fa-arrow-right" @click="toggleAddAttachable(card._id, 'right')"></i>
 			<i v-if="cardsStore.availableAttachablesByDirection(card._id, 'bottom').length" class="fa fa-arrow-down" @click="toggleAddAttachable(card._id, 'bottom')"></i>
+			<i class="fa fa-minus" @click="removeCard(card._id)"></i>
 			<ul>
-				<li v-for="childCard in cardsStore.playedAttachablesOnTreeSide(card._id, 'left')">
-					{{childCard.name}} on {{childCard.side}}
-				</li>
-				<li v-for="childCard in cardsStore.playedAttachablesOnTreeSide(card._id, 'top')">
-					{{childCard.name}} on {{childCard.side}}
-				</li>
-				<li v-for="childCard in cardsStore.playedAttachablesOnTreeSide(card._id, 'right')">
-					{{childCard.name}} on {{childCard.side}}
-				</li>
-				<li v-for="childCard in cardsStore.playedAttachablesOnTreeSide(card._id, 'bottom')">
-					{{childCard.name}} on {{childCard.side}}
+				<li v-for="childCard in cardsStore.playedAttachablesOnTree(card._id)">
+					{{childCard.name}} on {{childCard.side}} <i class="fa fa-minus" @click="removeCard(childCard._id)"></i>
 				</li>
 			</ul>
 		</li>
@@ -64,7 +56,7 @@ export default {
 	},
     props: {
 		playerId: {
-			type: Number,
+			type: String,
 			required: true
 		}
     },
@@ -103,6 +95,11 @@ export default {
 		},
 		addAttachable (cardId) {
 			this.cardsStore.playAttachableById(cardId, this.playerId, this.targetCardId)
+			this.direction = ''
+			this.targetCardId = null
+		},
+		removeCard (cardId) {
+			this.cardsStore.removeCardByCardId(cardId)
 			this.direction = ''
 			this.targetCardId = null
 		}

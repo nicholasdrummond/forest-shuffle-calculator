@@ -35,12 +35,45 @@ export const useCardsStore = defineStore('cards', {
         playedCards () {
             return (playerId) => this.playedTrees(playerId).concat(this.playedAttachables(playerId))
         },
+        allPlayedTrees () {
+            return this.trees.filter(card => card.playedBy)
+        },
+        allPlayedAttachables () {
+            return this.attachables.filter(card => card.playedBy)
+        },
+        allPlayedCards () {
+            return this.allPlayedTrees.concat(this.allPlayedAttachables)
+        },
         playedAttachablesOnTreeSide () {
             return (treeId, side) => this.attachables.filter(card => card.treeId === treeId && card.side === side)
         },
         playerScore () {
             return (playerId) => {
-                return 10
+                let attachables = this.playedAttachables(playerId)
+                let trees = this.playedTrees(playerId)
+                let biota = this.playedCards(playerId)
+                let allAttachables = this.allPlayedAttachables
+                let allTrees = this.allPlayedTrees
+                let allBiota = this.allPlayedCards
+
+                let result = 0
+                let calculatedGroupIds = []
+
+                for (var bio of biota) {
+                    if (bio.score) {
+                        let self = bio
+                        if (bio.group_score_id) {
+                            if (calculatedGroupIds.includes(bio.group_score_id)) {
+                                continue
+                            } else {
+                                calculatedGroupIds.push(bio.group_score_id)
+                            }
+                        }
+                        result += eval(bio.score)
+                    }
+                }
+
+                return result
             }
         }
     },

@@ -6,7 +6,7 @@
 	"scripts": {
 		"start": "node app.js",
 		"dev": "nodemon app.js",
-		"db-fill": "node ./src/db/packImporter.js && exit 1"
+		"db-fill": "dotenv -e .env -- node ./src/db/packImporter.js && exit 1"
 	},
 	"author": "Nicholas Drummond",
 	"license": "MIT",
@@ -19,5 +19,8 @@
 		"nodemon": "^3.1.9",
 		"swagger-jsdoc": "^6.2.8",
 		"swagger-ui-express": "^5.0.1"
+	},
+	"devDependencies": {
+		"dotenv-cli": "^8.0.0"
 	}
 }

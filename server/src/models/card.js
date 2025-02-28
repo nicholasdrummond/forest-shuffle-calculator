@@ -34,7 +34,8 @@ const CardSchema = new Schema({
 	side: { type: String, enum: sides },
 	species: [{ type: String, enum: species }],
 	tree_type: { type: String, enum: tree_types },
-   stack_limit: { type: Number, default: 1 }
+   stack_limit: { type: Number, default: 1 },
+   group_score_id: String
 });
 
 module.exports = () => {

@@ -19,32 +19,28 @@ export const useCardsStore = defineStore('cards', {
                     return this.attachables.filter(card => !card.playedBy && card.side === side)
                 }
 
-                let last = playedAttachables.find(card => !card.attachableChildId)
-                let score = last.score.find(card => card.condition === 'name_count')
-                if (score) {
-                    return this.attachables.filter(card => !card.playedBy && card.side === side && score.condition_target.includes(card.name))
+                if (playedAttachables.length < playedAttachables[0].stack_limit || playedAttachables[0].stack_limit === -1) {
+                    return this.attachables.filter(card => !card.playedBy && card.side === side && card.name === playedAttachables[0].name)
                 }
+
+                return []
             }
         },
         playedTrees () {
             return (playerId) => this.trees.filter(card => card.playedBy === playerId)
         },
-        playedAttachablesOnTreeSide () {
-            return (treeParentId, side) => this.attachables.filter(card => card.treeParentId === treeParentId && card.side === side)
+        playedAttachables () {
+            return (playerId) => this.attachables.filter(card => card.playedBy === playerId)
         },
-        canPlayCard () {
-            return (treeId, side) => {
-                let playedAttachables = this.playedAttachablesOnTreeSide(treeId, side)
-                if (!playedAttachables.length) {
-                    return true
-                }
-
-                let last = playedAttachables.find(card => !card.attachableChildId)
-                let score = last.score.find(card => card.condition === 'name_count')
-                if (score && this.availableAttachablesByDirection(treeId, side).length) {
-                    return true
-                }
-                return false
+        playedCards () {
+            return (playerId) => this.playedTrees(playerId).concat(this.playedAttachables(playerId))
+        },
+        playedAttachablesOnTreeSide () {
+            return (treeId, side) => this.attachables.filter(card => card.treeId === treeId && card.side === side)
+        },
+        playerScore () {
+            return (playerId) => {
+                return 10
             }
         }
     },
@@ -73,14 +69,14 @@ export const useCardsStore = defineStore('cards', {
                 console.log(`Tree with id ${cardId} could not be found`)
             }
         },
-        playAttachableById (cardId, playerId, treeParentId) {
+        playAttachableById (cardId, playerId, treeId) {
             var card = this.attachables.find(card => card._id === cardId)
-            var playedAttachables = this.playedAttachablesOnTreeSide(treeParentId, card.side)
+            var playedAttachables = this.playedAttachablesOnTreeSide(treeId, card.side)
             let last = playedAttachables.find(card => !card.attachableChildId)
             if (card) {
                 if (!card.playedBy) {
                     card.playedBy = playerId
-                    card.treeParentId = treeParentId
+                    card.treeId = treeId
                     if (last) last.attachableChildId = cardId
                 } else {
                     console.log(`Attachable with id ${cardId} has already been played by ${playerId}`)

@@ -1,7 +1,9 @@
 Finish card swagger definition
 Add swagger route definitions
 Move enums into json
-Set bee score conditions
 DB transaction when populate from json
+
+common toad and bee scores
+score grouping
 
 Issues: env not accessed during db-fill script

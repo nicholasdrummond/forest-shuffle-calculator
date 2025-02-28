@@ -1,5 +1,6 @@
 <template>
 	<p>Forest</p>
+	<p>Score: {{cardsStore.playerScore(playerId)}}</p>
 	<div>
 		<p>Add Tree</p>
 		<i class="fa fa-plus" @click="toggleAddTree"></i>
@@ -9,10 +10,10 @@
 	<ul>
 		<li v-for="card in cardsStore.playedTrees(playerId)">
 			{{card.name}}
-			<i v-if="cardsStore.canPlayCard(card._id, 'left')" class="fa fa-arrow-left" @click="toggleAddAttachable(card._id, 'left')"></i>
-			<i v-if="cardsStore.canPlayCard(card._id, 'top')" class="fa fa-arrow-up" @click="toggleAddAttachable(card._id, 'top')"></i>
-			<i v-if="cardsStore.canPlayCard(card._id, 'right')" class="fa fa-arrow-right" @click="toggleAddAttachable(card._id, 'right')"></i>
-			<i v-if="cardsStore.canPlayCard(card._id, 'bottom')" class="fa fa-arrow-down" @click="toggleAddAttachable(card._id, 'bottom')"></i>
+			<i v-if="cardsStore.availableAttachablesByDirection(card._id, 'left').length" class="fa fa-arrow-left" @click="toggleAddAttachable(card._id, 'left')"></i>
+			<i v-if="cardsStore.availableAttachablesByDirection(card._id, 'top').length" class="fa fa-arrow-up" @click="toggleAddAttachable(card._id, 'top')"></i>
+			<i v-if="cardsStore.availableAttachablesByDirection(card._id, 'right').length" class="fa fa-arrow-right" @click="toggleAddAttachable(card._id, 'right')"></i>
+			<i v-if="cardsStore.availableAttachablesByDirection(card._id, 'bottom').length" class="fa fa-arrow-down" @click="toggleAddAttachable(card._id, 'bottom')"></i>
 			<ul>
 				<li v-for="childCard in cardsStore.playedAttachablesOnTreeSide(card._id, 'left')">
 					{{childCard.name}} on {{childCard.side}}

@@ -2,11 +2,8 @@ Finish card swagger definition
 Add swagger route definitions
 Move enums into json
 
-DB transaction when populate from json
-Clear collections before insert
-
 scoring:
-implement bee scoring
+implement bee scoring - could add score in json that adds a tree to the objects and makes sure they are calculated first
 
 features todo:
 final scoring implementation

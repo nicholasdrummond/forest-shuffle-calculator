@@ -1,11 +1,13 @@
 import { defineStore } from 'pinia'
 import axios from 'axios'
+import clonedeep from 'lodash.clonedeep'
 
 export const useCardsStore = defineStore('cards', {
     state () {
         return {
             trees: [],
-            attachables: []
+            attachables: [],
+            caves: new Map()
         }
     },
     getters: {
@@ -25,6 +27,9 @@ export const useCardsStore = defineStore('cards', {
 
                 return []
             }
+        },
+        caveCount () {
+            return (playerId) => this.caves.get(playerId) ?? 0
         },
         playedTrees () {
             return (playerId) => this.trees.filter(card => card.playedBy === playerId)
@@ -53,11 +58,29 @@ export const useCardsStore = defineStore('cards', {
         playerScore () {
             return (playerId) => {
                 let attachables = this.playedAttachables(playerId)
-                let trees = this.playedTrees(playerId)
-                let biota = this.playedCards(playerId)
+                let trees = clonedeep(this.playedTrees(playerId))
+                for (var tree of trees) {
+                    if (tree.isFlipped) {
+                        delete tree.name
+                        delete tree.score
+                        delete tree.species
+                        delete tree.tree_type
+                        delete tree.group_score_id
+                    }
+                }
+                let biota = trees.concat(attachables)
                 let allAttachables = this.allPlayedAttachables
-                let allTrees = this.allPlayedTrees
-                let allBiota = this.allPlayedCards
+                let allTrees = clonedeep(this.allPlayedTrees)
+                for (var tree of allTrees) {
+                    if (tree.isFlipped) {
+                        delete tree.name
+                        delete tree.score
+                        delete tree.species
+                        delete tree.tree_type
+                        delete tree.group_score_id
+                    }
+                }
+                let allBiota = allTrees.concat(allAttachables)
 
                 let result = 0
                 let calculatedGroupIds = []
@@ -76,7 +99,7 @@ export const useCardsStore = defineStore('cards', {
                     }
                 }
 
-                return result
+                return result + this.caveCount(playerId)
             }
         }
     },
@@ -118,6 +141,9 @@ export const useCardsStore = defineStore('cards', {
                 console.log(`Attachable with id ${cardId} could not be found`)
             }
         },
+        setCaveCount (playerId, count) {
+            this.caves.set(playerId, isNaN(count) ? 0 : count)
+        },
         removeCardByCardId (cardId) {
             var card = this.allPlayedCards.find(card => card._id === cardId)
             if (card) {
@@ -128,6 +154,7 @@ export const useCardsStore = defineStore('cards', {
                         if (c.playedBy) {
                             delete c.playedBy
                             delete c.treeId
+                            delete c.isFlipped
                         } else {
                             console.log(`Card with id ${c._id} is already not in play`)
                         }
@@ -144,10 +171,19 @@ export const useCardsStore = defineStore('cards', {
                 if (card.playedBy) {
                     delete card.playedBy
                     delete card.treeId
+                    delete card.isFlipped
                 } else {
                     console.log(`Card with id ${card._id} is already not in play`)
                 }
             })
+        },
+        flipCard (cardId) {
+            var card = this.allPlayedTrees.find(card => card._id === cardId)
+            if (card.isFlipped) {
+                delete card.isFlipped
+            } else {
+                card.isFlipped = true
+            }
         }
     }
 })

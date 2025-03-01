@@ -7,8 +7,6 @@ Clear collections before insert
 
 scoring:
 implement bee scoring
-implement cave counter
-implement generic tree
 
 features todo:
 final scoring implementation

@@ -2,12 +2,18 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 /**
-   * @swagger
-   * tags:
-   *   name: Packs
-   *   description: Packs
-   */
-
+ * @swagger
+ *   definitions:
+ *     Pack:
+ *       type: object
+ *       properties:
+ *         _id:
+ *           type: string
+ *           description: The unique identifier for the pack.
+ *         name:
+ *           type: string
+ *           description: The name of the pack.
+ */
 const PackSchema = new Schema({
     name: String
 });

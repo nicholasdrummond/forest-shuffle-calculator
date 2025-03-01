@@ -4,6 +4,7 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const swagger = require('swagger-ui-express')
 const docs = require('swagger-jsdoc')
+const path = require('path')
 
 const port = process.env.PORT ?? 3001
 
@@ -35,7 +36,7 @@ app.use((req, res, next) => {
 	next()
 })
 
-/*app.use('/', swagger.serve, swagger.setup(docs({
+app.use('/', swagger.serve, swagger.setup(docs({
 	swaggerDefinition: {
 		info: {
 			title: 'Forest Shuffle Calculator',
@@ -43,8 +44,8 @@ app.use((req, res, next) => {
 			description: 'A service to retrieve cards and save scores for the forest shuffle calculator.',
 		}
 	},
-	apis: ['src/models/*.js', 'src/routes/*.js']
-})))*/
+	apis: [path.join(__dirname, 'src/models/*.js'), path.join(__dirname, 'src/routes/*.js')]
+})))
 
 app.use('/card', cards)
 app.use('/pack', packs)

@@ -1,7 +1,3 @@
-Finish card swagger definition
-Add swagger route definitions
-Move enums into json
-
 scoring:
 implement bee scoring - could add score in json that adds a tree to the objects and makes sure they are calculated first
 

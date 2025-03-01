@@ -36,7 +36,7 @@ app.use((req, res, next) => {
 	next()
 })
 
-app.use('/', swagger.serve, swagger.setup(docs({
+app.use('/docs', swagger.serve, swagger.setup(docs({
 	swaggerDefinition: {
 		info: {
 			title: 'Forest Shuffle Calculator',

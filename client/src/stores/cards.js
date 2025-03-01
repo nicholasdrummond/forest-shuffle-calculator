@@ -85,6 +85,12 @@ export const useCardsStore = defineStore('cards', {
                 let result = 0
                 let calculatedGroupIds = []
 
+                let preconditionCards = allBiota.filter(c => c.precondition)
+                for (var card of preconditionCards) {
+                    let self = card
+                    eval(card.precondition)
+                }
+
                 for (var bio of biota) {
                     if (bio.score) {
                         let self = bio

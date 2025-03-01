@@ -46,6 +46,9 @@ const species = ['amphibian', 'tree', 'bat', 'deer', 'insect', 'cloven-hoofed_an
  *         group_score_id:
  *           type: string
  *           description: The group score identifier for calculating scores as a group.
+ *         precondition:
+ *           type: string
+ *           description: A condition required to be calculated before scoring starts.
  */
 const CardSchema = new Schema({
 	pack: String,
@@ -55,8 +58,9 @@ const CardSchema = new Schema({
 	side: { type: String, enum: sides },
 	species: [{ type: String, enum: species }],
 	tree_type: { type: String, enum: tree_types },
-   stack_limit: { type: Number, default: 1 },
-   group_score_id: String
+   	stack_limit: { type: Number, default: 1 },
+	group_score_id: String,
+	precondition: String
 });
 
 module.exports = () => {

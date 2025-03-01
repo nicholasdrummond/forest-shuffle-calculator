@@ -1,6 +1,2 @@
-scoring:
-implement bee scoring - could add score in json that adds a tree to the objects and makes sure they are calculated first
-
 features todo:
-final scoring implementation
-css implementation
+css implementation - make pretty

@@ -1173,21 +1173,24 @@
                 "name": "Violet Carpenter Bee",
                 "side": "left",
                 "species": "insect",
-                "tree_type": "silver_fir"
+                "tree_type": "silver_fir",
+                "precondition": "if (allTrees.find(c => c._id === self.treeId)) { trees.push({name: allTrees.find(c => c._id === self.treeId).name, playedBy: self.playedBy}); allTrees.push({name: allTrees.find(c => c._id === self.treeId).name, playedBy: self.playedBy}); biota.push({name: allTrees.find(c => c._id === self.treeId).name, playedBy: self.playedBy}); allBiota.push({name: allTrees.find(c => c._id === self.treeId).name, playedBy: self.playedBy}) }"
             },
             {
                 "cost": 1,
                 "name": "Violet Carpenter Bee",
                 "side": "right",
                 "species": "insect",
-                "tree_type": "douglas_fir"
+                "tree_type": "douglas_fir",
+                "precondition": "if (allTrees.find(c => c._id === self.treeId)) { trees.push({name: allTrees.find(c => c._id === self.treeId).name, playedBy: self.playedBy}); allTrees.push({name: allTrees.find(c => c._id === self.treeId).name, playedBy: self.playedBy}); biota.push({name: allTrees.find(c => c._id === self.treeId).name, playedBy: self.playedBy}); allBiota.push({name: allTrees.find(c => c._id === self.treeId).name, playedBy: self.playedBy}) }"
             },
             {
                 "cost": 1,
                 "name": "Violet Carpenter Bee",
                 "side": "right",
                 "species": "insect",
-                "tree_type": "douglas_fir"
+                "tree_type": "douglas_fir",
+                "precondition": "if (allTrees.find(c => c._id === self.treeId)) { trees.push({name: allTrees.find(c => c._id === self.treeId).name, playedBy: self.playedBy}); allTrees.push({name: allTrees.find(c => c._id === self.treeId).name, playedBy: self.playedBy}); biota.push({name: allTrees.find(c => c._id === self.treeId).name, playedBy: self.playedBy}); allBiota.push({name: allTrees.find(c => c._id === self.treeId).name, playedBy: self.playedBy}) }"
             },
             {
                 "cost": 0,
@@ -1290,7 +1293,8 @@
                 "name": "Violet Carpenter Bee",
                 "side": "left",
                 "species": "insect",
-                "tree_type": "douglas_fir"
+                "tree_type": "douglas_fir",
+                "precondition": "if (allTrees.find(c => c._id === self.treeId)) { trees.push({name: allTrees.find(c => c._id === self.treeId).name, playedBy: self.playedBy}); allTrees.push({name: allTrees.find(c => c._id === self.treeId).name, playedBy: self.playedBy}); biota.push({name: allTrees.find(c => c._id === self.treeId).name, playedBy: self.playedBy}); allBiota.push({name: allTrees.find(c => c._id === self.treeId).name, playedBy: self.playedBy}) }"
             },
             {
                 "cost": 1,

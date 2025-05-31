@@ -1,11 +1,17 @@
 <template>
-	<div v-for="pack in packs">
-		<div class="pack-container" :class="{'pack-selected': pack.selected}" @click="togglePackSelection(pack)">
-			<p>Name: {{pack.name}}</p>
-			<br/>
+	<div class="container">
+    	<div class="row">
+			<div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" v-for="pack in packs">
+				<div class="card h-100 pack-container" :class="{'pack-selected': pack.selected}" @click="togglePackSelection(pack)">
+					<div class="card-body">
+						<h5 class="card-title">{{pack.name}}</h5>
+					</div>
+				</div>
+			</div>
 		</div>
+		
+		<p class="mt-4">Selected Packs: {{selectedPacks}}</p>
 	</div>
-	<p>Selected Packs: {{selectedPacks}}</p>
 </template>
 
 <script>
@@ -52,5 +58,6 @@ export default {
 		display: flex;
 		cursor: pointer;
 		border-style: solid;
+		border-color: blue;
 	}
 </style>

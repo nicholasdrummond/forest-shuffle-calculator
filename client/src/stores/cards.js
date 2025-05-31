@@ -114,8 +114,8 @@ export const useCardsStore = defineStore('cards', {
             packIds.forEach(id => {
                 axios.get(`http://localhost:3001/card/pack/${id}`)
                     .then((res) => {
-                        this.trees = this.trees.concat(res.data.filter(card => card.species.includes('tree')))
-                        this.attachables = this.attachables.concat(res.data.filter(card => !card.species.includes('tree')))
+                        this.trees = this.trees.concat(res.data.filter(card => card.species.includes('tree'))).sort((a, b) => a.name.localeCompare(b.name))
+                        this.attachables = this.attachables.concat(res.data.filter(card => !card.species.includes('tree'))).sort((a, b) => a.name.localeCompare(b.name))
                     })
                     .catch((err) => {
                         console.log(err)

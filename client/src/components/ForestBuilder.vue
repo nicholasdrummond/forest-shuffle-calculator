@@ -1,9 +1,14 @@
 <template>
-	<p>Forest Builder</p>
-    <p>Player Count {{playerIds.length}}</p><i class="fa fa-plus" @click="addPlayer"></i><br/>
-	<div v-for="id in playerIds" style="display: inline-block; margin: 10px">
-		<i v-if="id !== initialPlayer" class="fa fa-minus" @click="removePlayer(id)"></i>
-		<Forest :player-id="id"></Forest>
+	<div class="container">
+		<h3>Forest Builder</h3>
+		<p>Player Count {{playerIds.length}}</p><i class="fa fa-plus mb-3" @click="addPlayer"></i><br/>
+
+		<div class="row">
+			<div class="col-12 col-sm-6 col-lg-3 mb-4 position-relative" v-for="id in playerIds" style="display: inline-block; margin: 10px">
+				<i v-if="id !== initialPlayer" class="fa fa-minus text-danger position-absolute end-0 me-2 mt-1 z-1" @click="removePlayer(id)"></i>
+				<Forest :player-id="id"></Forest>
+			</div>
+		</div>
 	</div>
 </template>
 
